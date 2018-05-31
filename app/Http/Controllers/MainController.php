@@ -128,70 +128,20 @@ class MainController extends Controller {
         return view('insert');
     }
 
-    public function addproduct(Request $request) {
-        $product = new Product();
-        $product->id = $request->input('id');
-        $product->cat_id = $request->input('cat_id');
-        $product->brand_id = $request->input('brand_id');
-        $product->price = $request->input('price');
-        $product->details = $request->input('details');
+    public function addproduct() {
+        $inputs = Input::except('_token');
         $file = Input::file("image");
         if (!empty($file)) {
             $newFilename = $file->getClientOriginalName();
             $destinationPath = public_path() . '/images';
             $upload = $file->move($destinationPath, $newFilename);
             if ($upload)
-                $product->image = $newFilename;
+                $inputs['image'] = $newFilename;
         }
-        $product->Weight = $request->input('Weight');
-        $product->OS = $request->input('OS');
-        $product->Protection = $request->input('Protection');
-        $product->SIM = $request->input('SIM');
-         $product->flipcart = $request->input('flipcart');
-        $product->drazpk = $request->input('drazpk');
-        $product->ebay = $request->input('ebay');
-        $product->Dimensions = $request->input('Dimensions');
-        $product->Primary = $request->input('Primary');
-        $product->Front = $request->input('Front');
-        $product->Video = $request->input('Video');
-        $product->Internal = $request->input('Internal');
-        $product->RAM = $request->input('RAM');
-        $product->Expandable = $request->input('Expandable');
-        $product->Capacity = $request->input('Capacity');
-        $product->Type = $request->input('Type');
-        $product->Turbo = $request->input('Turbo');
-        $product->Bluetooth = $request->input('Bluetooth');
-        $product->NFC = $request->input('NFC');
-        $product->USB = $request->input('USB');
-        $product->Variant = $request->input('Variant');
-        $product->Cores = $request->input('Cores');
-        $product->Frequency = $request->input('Frequency');
-        $product->Make = $request->input('Make');
-        $product->GPU = $request->input('GPU');
-        $product->Architecture = $request->input('Architecture');
-        $product->image_id = 1;
-        $product->realflash = $request->input('realflash');
-        $product->G2 = $request->input('G2');
-        $product->G3 = $request->input('G3');
-        $product->G4 = $request->input('G4');
-        $product->GPS = $request->input('GPS');
-        $product->Loudpeaker = $request->input('Loudpeaker');
-        $product->HeadPHones = $request->input('HeadPHones');
-        $product->Infrared = $request->input('Infrared');
-        $product->Fingerprint_sensor = $request->input('Fingerprint_sensor');
-        $product->Proximity = $request->input('Proximity');
-        $product->Accelerometer = $request->input('Accelerometer');
-        $product->Gyroscope = $request->input('Gyroscope');
-        $product->Ambient_Light = $request->input('Ambient_Light');
-        $product->display_type = $request->input('display_type');
-        $product->Size = $request->input('Size');
-        $product->Resolution = $request->input('Resolution');
-        $product->Pixel_Density = $request->input('Pixel_Density');
-        $product->Touchscreen_type = $request->input('Touchscreen_type');
-        $product->Color_Reproduction = "Color_Reproduction";
-        $product->Screen_to_body_percentage = $request->input('Screen_to_body_percentage');
-        $product->save();
-        return view('adminPanel.addProduct');
+         $save_data  = Product::create($inputs);
+         if($save_data){
+            return view('adminPanel.addProduct');
+         }
     }
 
     public function GetAllProducts(Request $request) {

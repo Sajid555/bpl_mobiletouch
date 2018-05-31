@@ -18,9 +18,8 @@
 				<div class="panel-wrapper collapse in">
 					<div class="panel-body">
 						<div class="form-wrap">
-							<form action="{{url('/addproducts')}}" method="POST" enctype="multipart/form-data">
-            {{ csrf_field() }}
-
+							<form action="{{route('postProduct')}}" method="POST" enctype="multipart/form-data">
+           						 {{ csrf_field() }}
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
@@ -89,7 +88,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>FlipCart Price</strong></label>
-											<input type="text" id="price" name="drazpk" class="form-control" placeholder="Enter FlipCart price">
+											<input type="text" id="price" name="flipcart" class="form-control" placeholder="Enter FlipCart price">
 										</div>
 									</div>
 								</div>

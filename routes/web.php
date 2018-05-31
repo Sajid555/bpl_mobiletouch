@@ -91,7 +91,7 @@ Route::post('/login/custom', [
     'uses' => 'LoginController@login',
     'as' => 'login.custom'
 ]);
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'CheckPermissions'], function() {
 
     Route::get('/home', function() {
 
@@ -116,7 +116,7 @@ Route::get('/brands', function () {
 Route::get('/addproducts', function () {
     return view('adminPanel.addProduct');
 });
-Route::post('/addproducts', 'MainController@addproduct');
+Route::post('/admin/products/add', 'MainController@addproduct')->name('postProduct');
 
 Route::get('/addbrand', function () {
     return view('adminPanel.addBrand');

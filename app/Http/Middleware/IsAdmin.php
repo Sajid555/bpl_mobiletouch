@@ -16,9 +16,9 @@ class IsAdmin
     public function handle($request, Closure $next)
     {
         if($request->session()->get('userType')=='1' && $request->session()->get('userType')=='0') {
+                 dd('here');
             return $next($request);
         }
-
         return redirect('/');
     }
 }

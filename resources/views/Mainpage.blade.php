@@ -149,7 +149,7 @@
                <ul class="pager clearfix">
                  
                </ul>
-               <div >{!! $prodct->render() !!}</div>
+               <div >{!! $prodct->links() !!}</div>
             </div>
          </div>
       </div>

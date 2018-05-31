@@ -19,7 +19,7 @@ class checkPermissions
             return $next($request);
         }
         else{
-            return redirect()->route('home');
+            return redirect()->to('adminlogin');
         }
 
     }
