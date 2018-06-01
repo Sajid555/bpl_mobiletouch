@@ -8,6 +8,7 @@ use App\Product;
 use App\photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller {
 
@@ -113,6 +114,7 @@ class MainController extends Controller {
     }
 
     public function show() {
+        
         $prodct =Product::orderBy('created_at','desc')->paginate(12);
         return view('Mainpage', compact('prodct'));
     }
@@ -120,7 +122,6 @@ class MainController extends Controller {
     public function index() {
         $id = $_GET['id'];
         $brand = Brand::where('cat_id', $id)->get();
-        // return view('AddModel', compact('category', 'brand'));
         return $brand;
     }
 

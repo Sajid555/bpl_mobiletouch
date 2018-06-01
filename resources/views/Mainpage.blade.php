@@ -70,7 +70,7 @@
                            <div class="sidebar-filters-title">Price</div><br>
                               <select name="price">
                                  <option value="0">Price Range</option>
-                                 <option value="1000-2000">Rs.1000-Rs.2000</option>
+                                 <option value="0-2000">Rs.0-Rs.2000</option>
                                  <option value="2001-5000">Rs.2001-Rs.5000</option>
                                  <option value="5001-10000">Rs.5001-Rs.10000</option>
                                  <option value="10001-20000">Rs.10001-Rs.20000</option>
@@ -100,9 +100,97 @@
 
                   <div id="second-tab-group" class="tabgroup">
                      <div id="tabs2-1">
-                        <div class="row">
+                        <div class="row col-md-12">
+                           <?php $count=1;?>
+
                            @foreach($prodct as $book)
-                           <div class="col-sm-2">
+                           
+
+                           @if($count==7)
+                     
+                              <?php $htmlCode='</div> <div class="row col-md-12">';
+
+                              echo $htmlCode;
+                              echo '<div class="col-md-2">
+                                       <div class="product">
+                                          <div class="product-inner">
+                                             <figure class="product-media">
+                                                <a href="'; ?>{{route('details',['id'=>$book->id])}} <?php  echo '">'; ?>
+
+                                                   @if(isset($book->image))
+                                                   
+                                                      <?php echo '<img  src="';?>
+
+                                                      {{asset('images') . '/'.$book->image}}
+
+                                                      <?php echo '" alt="" class="img-responsive">'; ?>
+
+                                                      @else
+                                                      <?php echo '<img style="min-width: 63px; min-height: 84px"  src="https://image.ibb.co/kk9GY8/shopping_cart.png" alt="shopping_cart" border="0">'; ?>
+                                                   @endif
+
+                                                   <?php
+
+
+
+                                                   echo ' </a>
+                                             </figure>
+                                             <div class="product-divider"></div>
+                                             <div class="product-caption">
+                                                <a href="';
+
+
+                                                    ?>
+                                               {{route('details',['id'=>$book->id])}} 
+
+                                               <?php echo '">
+                                                <div class="product-name">
+                                                      <label value="'; ?>
+
+                                                      {{$book->brand_id}}
+
+                                                      <?php echo'"'; ?> 
+                                                         
+                                                         <?php
+                                                            $productName = DB::table('brands')->where('id', '=', $book->brand_id)->get();
+                                                            echo $productName[0]->brand_name;
+                                                         echo '
+                                                      </label>
+                                                   </a>
+                                                </div>
+                                                <div class="product-price">'; echo "Rs."; ?>
+
+
+                                                   {{$book->price}}
+
+                                                   <?php echo '
+                                                </div>
+                                                <div class="product-prices clearfix">
+                                                   <div class="product-price-old">
+                                                      <a href="';
+
+                                                      ?>
+
+                                                      {{route('addToCart' , ['id' => $book->id])}}
+
+                                                      <?php echo'" class="btn btn-primary " value="submit">Add to Cart</a>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>';  
+                              
+                               
+
+                              $count=2;
+                               ?>
+                           
+                          
+                           @else
+
+                           
+
+                           <div class="col-md-2">
                               <div class="product">
                                  <div class="product-inner">
                                     <figure class="product-media">
@@ -136,11 +224,16 @@
                                     </div>
                                  </div>
                               </div>
+
+                              <?php $count=$count+1; ?>
+                           @endif
+                                 
+                           
                            </div>
                            @endforeach
                         </div>
                      </div>
-                     
+
                   </div>
                </div>
             </div>
@@ -149,7 +242,9 @@
                <ul class="pager clearfix">
                  
                </ul>
-               <div >{!! $prodct->links() !!}</div>
+               
+               <div  > </div>
+           
             </div>
          </div>
       </div>
