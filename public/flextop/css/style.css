@@ -701,7 +701,7 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 .service1 .caption .txt1{font-weight: 500;}
 
 .product{position: relative;}
-.product-inner{padding: 20px; position: relative; background: #fff; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
+.product-inner{padding: 0px; position: relative; background: #fff; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
 transition: all 1s ease-in-out; -moz-transition: all 0.3s ease-out; -webkit-transition: all 1s ease-in-out; -o-transition: all 0.3s ease-out;
 }
 .product-inner:hover{box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
@@ -743,7 +743,7 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 .product-inner .product-prices{opacity: 0; filter: alpha(opacity=0);}
 .product-inner:hover .product-prices{opacity: 1; filter: alpha(opacity=100);-ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1); bottom: 0;}
 .product-price{text-align: center; font-weight: 400; color: #000099; line-height: 1;}
-.product-price-old{float: left; font-size: 13px; color: #808080; text-decoration: none;}
+.product-price-old{float: left; text-align: center; font-size: 13px; color: #808080; text-decoration: none;}
 .product-add-to-cart{position: absolute; left: 0; width: 100%; bottom: -20px;opacity: 0; filter: alpha(opacity=0); -ms-transform: scale(0.01); -webkit-transform: scale(0.01); transform: scale(0.01);
 transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out;
 }
@@ -904,7 +904,7 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 .navbar_ .navbar-toggle:hover, .navbar_ .navbar-toggle:focus{background: #e7ae03;}
 .navbar_ .navbar-toggle .icon-bar{background: #fff;}
 .navbar-collapse_{padding-left: 0; padding-right: 0; border: none;}
-.navbar_ .nav{position: static; margin: 0; padding: 0; display: block; float: none;}
+.navbar_ .nav{position: static; margin: 0; padding: 0; display: -webkit-box; float: none;}
 .navbar_ .nav > li{display: block; float: left; white-space: nowrap; background: none; margin-left: 30px; /*background: url(../images/menu_bg.png) left center no-repeat;*/ padding-left: 30px; position: static;}
 .navbar_ .nav > li:first-child{margin-left: 0; padding-left: 0; background: none;}
 .navbar_ .nav > li > a{display: block; text-decoration: none; background: none; font-family: 'Rubik'; font-weight: normal; font-size: 16px; line-height: 10px; color: #fff; text-shadow:none; padding: 10px 2px; border: none; margin: 0; text-align: left; position: relative; z-index: 2;

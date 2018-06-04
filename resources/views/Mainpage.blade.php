@@ -59,6 +59,91 @@
                            </div>
                         </div>
                   </div>
+                    <div class="sidebar-block">
+                     <div class="sidebar-title">
+                        Brands
+                     </div>
+                     <form method="POST" action="{{url('/filter')}}">
+                        {{ csrf_field() }}
+                        <div class="sidebar-content">
+                           <div class="brandscroll">
+                              <?php
+                                 $product = \App\Product::all();
+                                 ?>
+                              @foreach($product as $p)
+                              <input type="checkbox" name="SIM" value="{{$p->SIM}}"> {{$p->SIM}}<br>
+                              @endforeach
+                           </div>
+                        </div>
+                  </div>
+                  <div class="sidebar-block">
+                     <div class="sidebar-title">
+                        Brands
+                     </div>
+                     <form method="POST" action="{{url('/filter')}}">
+                        {{ csrf_field() }}
+                        <div class="sidebar-content">
+                           <div class="brandscroll">
+                              <?php
+                                 $product = \App\Product::all();
+                                 ?>
+                              @foreach($product as $p)
+                              <input type="checkbox" name="SIM" value="{{$p->SIM}}"> {{$p->SIM}}<br>
+                              @endforeach
+                           </div>
+                        </div>
+                  </div>
+                  <div class="sidebar-block">
+                     <div class="sidebar-title">
+                        Brands
+                     </div>
+                     <form method="POST" action="{{url('/filter')}}">
+                        {{ csrf_field() }}
+                        <div class="sidebar-content">
+                           <div class="brandscroll">
+                              <?php
+                                 $product = \App\Product::all();
+                                 ?>
+                              @foreach($product as $p)
+                              <input type="checkbox" name="SIM" value="{{$p->SIM}}"> {{$p->SIM}}<br>
+                              @endforeach
+                           </div>
+                        </div>
+                  </div>
+                  <div class="sidebar-block">
+                     <div class="sidebar-title">
+                        Brands
+                     </div>
+                     <form method="POST" action="{{url('/filter')}}">
+                        {{ csrf_field() }}
+                        <div class="sidebar-content">
+                           <div class="brandscroll">
+                              <?php
+                                 $product = \App\Product::all();
+                                 ?>
+                              @foreach($product as $p)
+                              <input type="checkbox" name="OS" value="{{$p->OS}}"> {{$p->OS}}<br>
+                              @endforeach
+                           </div>
+                        </div>
+                  </div>
+                    <div class="sidebar-block">
+                     <div class="sidebar-title">
+                        Brands
+                     </div>
+                     <form method="POST" action="{{url('/filter')}}">
+                        {{ csrf_field() }}
+                        <div class="sidebar-content">
+                           <div class="brandscroll">
+                              <?php
+                                 $categry = \App\Category::all();
+                                 ?>
+                              @foreach($categry as $cats)
+                              <input type="checkbox" name="cat_id" value="{{$cats->id}}"> {{$cats->cat_name}}<br>
+                              @endforeach
+                           </div>
+                        </div>
+                  </div>
                   <div class="sidebar-block">
                   <div class="sidebar-title">
                   Filter By
@@ -165,9 +250,6 @@
                                        </a>
                                        
                                     </figure>
-                                    <div class="product-prices clearfix">
-                                          <div class="product-price-old">{{$book->Size}}<br>{{$book->Internal}}Memory<br>-{{$book->Capacity}}</div>
-                                       </div>
                                     <div class="product-divider"></div>
                                     <div class="product-caption">
                                        <a href="{{route('details',['id'=>$book->id])}}">
@@ -182,7 +264,10 @@
                                        </div>
                                        <div class="product-price"><?php echo "Rs."; ?>{{$book->price}}</div>
                                        <div class="product-prices clearfix">
-                                          <div class="product-price-old">
+                                          <div class="product-price-old">{{$book->Size}}<br>{{$book->Internal}}Memory<br>-{{$book->Capacity}}</div>
+                                       </div>
+                                       <div class="product-prices clearfix">
+                                          <div class="">
                                              <a href="{{route('addToCart' , ['id' => $book->id])}}" class="btn btn-primary " value="submit">Add to Cart</a>
                                           </div>
                                        </div>

@@ -4,15 +4,15 @@
          <div class="row">
             <div class="col-sm-6">
                <div class="logo2">
-                  <a href="#" target="_blank">
-                  <img src="{{asset('flextop/images/logo2.png')}}" alt="" class="img-responsive" title="">
+                  <a href="{{url('/')}}">
+                  <img src="{{asset('flextop/images/MTLogo.png')}}" alt="" class="img-responsive" title="">
                   </a>
                </div>
                <div class="contact-details">
                   <p>
                      <i class="fa fa-address-card"></i>
                      <span>Address:</span>
-                     1234 Heaven Stress, Beverly Hill, Melbourne, USA.
+                     Shop # , Hafeez Centre, Gulberg, Lahore.
                   </p>
                   <p>
                      <i class="fa fa-envelope"></i>
