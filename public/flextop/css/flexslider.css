@@ -2,14 +2,14 @@ html[xmlns] .slides{display:block;}
 * html .slides{height:1%;}
 
 #slider_wrapper{position: relative; border: 0px solid; box-shadow: 0px 0px 10px;}
-#slider{margin:0; position: relative;}
+#slider{margin:0; position: relative; height: 260px;}
 
-#flexslider{position:relative; min-height: 380px;}
+#flexslider{position:relative; min-height: 260px;}
 #flexslider .slides>li{display:none;position:relative;}
 
 .slides:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
-.slides{list-style:none outside none;margin:0;padding: 0;}
-.slides img{width:100%; border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;}
+.slides{list-style:none outside none;margin:0;padding: 0; height: 260px;}
+.slides img{width:100%; border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px; height: 260px;}
 
 #flexslider .flex-control-nav{display:block; padding: 0; margin: 0; position: absolute; right: 0; left: 0; top: auto; bottom: 5%; z-index:5; overflow:hidden;list-style:none; text-align: center; line-height: 1;}
 #flexslider .flex-control-nav li{display: inline-block; float:none; width:14px; height:14px; margin: 0 5px;}

@@ -1127,10 +1127,14 @@ img {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  max-width: 85%;
+  max-width: 102%;
   height: auto;
   padding-top: 5px;
   padding-bottom: 5px;
+
+}
+.img-responsive {
+      margin-left: 0px;
 }
 .img-rounded {
   border-radius: 6px;
@@ -1817,7 +1821,7 @@ pre code {
     width: 25%;
   }
   .col-sm-2 {
-    width: 16.66666667%;
+    width: 20.66666667%;
   }
   .col-sm-1 {
     width: 8.33333333%;
@@ -4210,7 +4214,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: block !important;
     height: auto !important;
     padding-bottom: 0;
-    padding-top: 1px;
+    padding-top: 5px;
     overflow: visible !important;
   }
   .navbar-collapse.in {
@@ -6760,3 +6764,5 @@ button.close {
     display: none !important;
   }
 }
+
+.logo_wrapper {margin-left: 130px; margin-top: 4px; width: 115px;}

@@ -46,21 +46,24 @@
             <div class="navbar navbar_ navbar-default">
                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
+               <span class="icon-bar">A</span>
+               <span class="icon-bar">b</span>
+               <span class="icon-bar">c</span>
                </button>
                <div class="navbar-collapse navbar-collapse_ collapse">
                   <ul class="nav navbar-nav sf-menu clearfix">
-                     <li class="sub-menu sub-menu-1"><a href="{{url('/')}}">Home</a></li>
+                    
+                     <li class="sub-menu sub-menu-1"><a href="{{url('/')}}">Mobiles</a></li>
 
-                     <li class="sub-menu sub-menu-1"><a href="#">Samsung Phones</a></li>
+                     <li class="sub-menu sub-menu-1"><a href="#">Computers</a></li>
                      
-                     <li><a href="#">Huawei Phones</a></li>
+                     <li><a href="#">TV</a></li>
 
-                     <li><a href="#">Oppo Phones</a></li>
+                     <li><a href="#">Appliance</a></li>
 
-                     <li class="sub-menu sub-menu-1"><a href="#">Nokia Phones</a></li>
+                     <li class="sub-menu sub-menu-1"><a href="#">Care</a></li>
+                     <li class="sub-menu sub-menu-1"><a href="#">Best Products</a></li>
+                     <li class="sub-menu sub-menu-1"><a href="#">Deals</a></li>
 
                      <li class=""><a href="{{url('/aboutus')}}">About Us</a></li>
                      <li><a href="{{url('/contactus')}}">Contact us</a></li>

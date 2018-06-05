@@ -5,7 +5,7 @@
    @include('frontInc.header')
    <br>
    <!--Slider-->
-   <div class="container">
+   <div class="container" style="height: 260px;">
       <div class="row">
          <div class="col-sm-1"></div>
          <div class="col-sm-10">
@@ -63,8 +63,6 @@
                      <div class="sidebar-title">
                         Brands
                      </div>
-                     <form method="POST" action="{{url('/filter')}}">
-                        {{ csrf_field() }}
                         <div class="sidebar-content">
                            <div class="brandscroll">
                               <?php
@@ -80,15 +78,13 @@
                      <div class="sidebar-title">
                         Brands
                      </div>
-                     <form method="POST" action="{{url('/filter')}}">
-                        {{ csrf_field() }}
                         <div class="sidebar-content">
                            <div class="brandscroll">
                               <?php
                                  $product = \App\Product::all();
                                  ?>
                               @foreach($product as $p)
-                              <input type="checkbox" name="SIM" value="{{$p->SIM}}"> {{$p->SIM}}<br>
+                              <input type="checkbox" name="SIM" value="{{$p->Primary}}"> {{$p->Primary}}<br>
                               @endforeach
                            </div>
                         </div>
@@ -97,15 +93,28 @@
                      <div class="sidebar-title">
                         Brands
                      </div>
-                     <form method="POST" action="{{url('/filter')}}">
-                        {{ csrf_field() }}
                         <div class="sidebar-content">
                            <div class="brandscroll">
                               <?php
                                  $product = \App\Product::all();
                                  ?>
                               @foreach($product as $p)
-                              <input type="checkbox" name="SIM" value="{{$p->SIM}}"> {{$p->SIM}}<br>
+                              <input type="checkbox" name="SIM" value="{{$p->Front}}"> {{$p->Front}}<br>
+                              @endforeach
+                           </div>
+                        </div>
+                  </div>
+                    <div class="sidebar-block">
+                     <div class="sidebar-title">
+                        Brands
+                     </div>
+                        <div class="sidebar-content">
+                           <div class="brandscroll">
+                              <?php
+                                 $product = \App\Product::all();
+                                 ?>
+                              @foreach($product as $p)
+                              <input type="checkbox" name="Internal" value="{{$p->Internal}}"> {{$p->Internal}}<br>
                               @endforeach
                            </div>
                         </div>
@@ -114,13 +123,9 @@
                      <div class="sidebar-title">
                         Brands
                      </div>
-                     <form method="POST" action="{{url('/filter')}}">
-                        {{ csrf_field() }}
                         <div class="sidebar-content">
                            <div class="brandscroll">
-                              <?php
-                                 $product = \App\Product::all();
-                                 ?>
+                              
                               @foreach($product as $p)
                               <input type="checkbox" name="OS" value="{{$p->OS}}"> {{$p->OS}}<br>
                               @endforeach
@@ -131,15 +136,58 @@
                      <div class="sidebar-title">
                         Brands
                      </div>
-                     <form method="POST" action="{{url('/filter')}}">
-                        {{ csrf_field() }}
                         <div class="sidebar-content">
                            <div class="brandscroll">
                               <?php
-                                 $categry = \App\Category::all();
-                                 ?>
-                              @foreach($categry as $cats)
-                              <input type="checkbox" name="cat_id" value="{{$cats->id}}"> {{$cats->cat_name}}<br>
+                                 $product = \App\Product::all();
+                                 ?>   
+                              @foreach($product as $p)
+                              <input type="checkbox" name="display_type" value="{{$cats->display_type}}"> {{$p->display_type}}<br>
+                              @endforeach
+                           </div>
+                        </div>
+                  </div>
+                   <div class="sidebar-block">
+                     <div class="sidebar-title">
+                        Brands
+                     </div>
+                        <div class="sidebar-content">
+                           <div class="brandscroll">
+                              <?php
+                                 $product = \App\Product::all();
+                                 ?>   
+                              @foreach($product as $p)
+                              <input type="checkbox" name="Resolution" value="{{$p->Resolution}}"> {{$p->Resolution}}<br>
+                              @endforeach
+                           </div>
+                        </div>
+                  </div>
+                   <div class="sidebar-block">
+                     <div class="sidebar-title">
+                        Brands
+                     </div>
+                        <div class="sidebar-content">
+                           <div class="brandscroll">
+                              <?php
+                                 $product = \App\Product::all();
+                                 ?>   
+                              @foreach($product as $p)
+                              <input type="checkbox" name="RAM" value="{{$p->RAM}}"> {{$p->RAM}}<br>
+                              @endforeach
+                           </div>
+                        </div>
+                  </div>
+                   <div class="sidebar-block">
+                     <div class="sidebar-title">
+                        Brands
+                     </div>
+                        <div class="sidebar-content">
+                           <div class="brandscroll">
+                              <?php
+                                 $product = \App\Product::all();
+                                 ?>   
+                              @foreach($product as $p)
+                              <input type="checkbox" name="Protection" value="{{$p->Protection}}"> {{$p->Protection}}<br>
                               @endforeach
                            </div>
                         </div>

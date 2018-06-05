@@ -14,7 +14,7 @@ html[xmlns] .slides{display:block;}
 #flexslider .flex-control-nav{display:block; padding: 0; margin: 0; position: absolute; right: 0; left: 0; top: auto; bottom: 5%; z-index:5; overflow:hidden;list-style:none; text-align: center; line-height: 1;}
 #flexslider .flex-control-nav li{display: inline-block; float:none; width:14px; height:14px; margin: 0 5px;}
 #flexslider .flex-control-nav li:first-child{}
-#flexslider .flex-control-nav li a{display:block;width: 100%; height: 100%; background: none; text-indent: -9999%; cursor:pointer; position: relative; overflow: hidden; background: #c2c2c2; border: 3px solid #fff;border-radius:50%; -moz-border-radius:50%; -webkit-border-radius:50%;}
+#flexslider .flex-control-nav li a{display:block;width: 100%; height: 100s%; background: none; text-indent: -9999%; cursor:pointer; position: relative; overflow: hidden; background: #c2c2c2; border: 3px solid #fff;border-radius:50%; -moz-border-radius:50%; -webkit-border-radius:50%;}
 #flexslider .flex-control-nav li a:hover, #flexslider .flex-control-nav li a.flex-active{ border: 2px solid #156192; background: #fff;}
 #flexslider .flex-control-nav li .flex-active{cursor:default;pointer-events:none;}
 

@@ -7,8 +7,16 @@
 <div id="DIV_1">
    <div id="DIV_2">
       <div id="DIV_3">
-         <a href="http://www.mysmartprice.com/mobile/pricelist/mobile-price-list-in-india.html" id="A_4">Mobile Phones</a> / Samsung / 
-         <?php echo ($data->model_name) ?> 
+         <a href="" id="A_4">Mobile Phones / <?php 
+                     $productName=DB::table('categories')->where('id', '=', $data->cat_id)->get();
+                     echo $productName[0]->cat_name; 
+                     
+                     ?> / 
+                  <?php 
+                     $productName=DB::table('brands')->where('id', '=', $data->brand_id)->get();
+                     echo $productName[0]->brand_name; 
+                     
+                     ?></a>  
       </div>
    </div>
    <div id="DIV_15">
@@ -607,8 +615,11 @@
                      </tr>
                   </tbody>
                </table>
+
             </div>
+
          </div>
+         
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -636,5 +647,6 @@
    });
    
 </script>
+
 
 @endsection

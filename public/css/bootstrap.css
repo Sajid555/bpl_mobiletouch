@@ -6757,3 +6757,8 @@ button.close {
     display: none !important;
   }
 }
+
+@media (min-width: 768px)
+.col-sm-2 {
+    width: 20.666667%;
+}
