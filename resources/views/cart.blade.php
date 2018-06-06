@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 @else
-                                 <div> Your cart is empty </div>
+                                 <div><h2> Your cart is empty</h2> </div>
                                  @endif
                 <div class="container">
                    <!--Top Brands-->

@@ -312,7 +312,7 @@
                                        </div>
                                        <div class="product-price"><?php echo "Rs."; ?>{{$book->price}}</div>
                                        <div class="product-prices clearfix">
-                                          <div class="product-price-old">{{$book->Size}}<br>{{$book->Internal}}Memory<br>-{{$book->Capacity}}</div>
+                                          <div class="product-price-old">{{$book->Size}}<br>{{$book->Internal}}<br>-{{$book->Capacity}}</div>
                                        </div>
                                        <div class="product-prices clearfix">
                                           <div class="">
@@ -328,6 +328,7 @@
                            @endforeach
                         </div>
                      </div>
+
                   </div>
                </div>
             </div>
@@ -335,7 +336,7 @@
             <div class=" col-sm-10 pane2 clearfix">
                <ul class="pager clearfix">
                </ul>
-               <div  > </div>
+               <div  > {{ $prodct->links() }}</div>
             </div>
          </div>
       </div>

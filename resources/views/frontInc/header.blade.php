@@ -46,9 +46,9 @@
             <div class="navbar navbar_ navbar-default">
                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar">A</span>
-               <span class="icon-bar">b</span>
-               <span class="icon-bar">c</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
                </button>
                <div class="navbar-collapse navbar-collapse_ collapse">
                   <ul class="nav navbar-nav sf-menu clearfix">

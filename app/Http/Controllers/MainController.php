@@ -115,8 +115,8 @@ class MainController extends Controller {
 
     public function show() {
         
-        $prodct =Product::orderBy('created_at','desc')->paginate(12);
-        return view('Mainpage', compact('prodct'));
+        $prodct =Product::orderBy('created_at','desc')->paginate(18);
+        return view('Mainpage')->with('prodct',$prodct);
     }
 
     public function index() {

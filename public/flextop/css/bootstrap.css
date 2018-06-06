@@ -4209,6 +4209,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     border-top: 0;
     -webkit-box-shadow: none;
             box-shadow: none;
+
   }
   .navbar-collapse.collapse {
     display: block !important;

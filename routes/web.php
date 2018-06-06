@@ -16,6 +16,10 @@
 Route::get('/slider', function () {
     return view('test');
 });
+
+Route::get('ans', function () {
+    return view('ans');
+});
 Route::get('/AddCategory', function () {
     return view('AddCategory');
 });
