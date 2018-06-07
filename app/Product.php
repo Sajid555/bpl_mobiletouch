@@ -21,6 +21,37 @@ class Product extends Model
     			$max_price = $price[1];
     			$sql->whereBetween('price',array($min_price,$max_price));
     		}
+            if(isset($search_params['Capacity']) && !empty($search_params['Capacity'])){
+                $Capacity = explode("-", $search_params['Capacity']);
+                $min_Capacity = $Capacity[0];
+                $max_Capacity = $Capacity[1];
+                $sql->whereBetween('Capacity',array($min_Capacity,$max_Capacity));
+            }
+            if(isset($search_params['Primary']) && !empty($search_params['Primary'])){
+                $Capacity = explode("-", $search_params['Primary']);
+                $min_Capacity = $Capacity[0];
+                $max_Capacity = $Capacity[1];
+                $sql->whereBetween('Primary',array($min_Capacity,$max_Capacity));
+            }
+            if(isset($search_params['Front'])&& !empty($search_params['Front'])){
+                $Front=explode("-", $search_params['Front']);
+                $min_Front=$Front[0];
+                $max_Front=$Front[1];
+                $sql->whereBetween('Front',array($min_Front,$max_Front));
+            }
+             if(isset($search_params['Internal'])&& !empty($search_params['Internal'])){
+                $Internal=explode("-", $search_params['Internal']);
+                $min_Front=$Internal[0];
+                $max_Front=$Internal[1];
+                $sql->whereBetween('Internal',array($min_Front,$max_Front));
+            }
+            if(isset($search_params['OS'])&& !empty($search_params['OS'])){
+                $OS=explode("-", $search_params['OS']);
+                $min_Front=$OS[0];
+                $max_Front=$OS[1];
+                $sql->whereBetween('OS',array($min_Front,$max_Front));
+            }
     	})->paginate(18);
     }
+    
 }

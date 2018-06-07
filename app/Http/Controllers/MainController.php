@@ -69,7 +69,6 @@ class MainController extends Controller {
         $prodct = \App\Product::filter($inputs);
         return view('Mainpage', compact('prodct'));
     }
-
     public function addcategory(Request $request) {
         $Category = new Category();
         $Category->cat_name = $request->input('cat_name');
@@ -100,7 +99,7 @@ class MainController extends Controller {
 
     public function show() {
         
-        $prodct =Product::orderBy('created_at','desc')->paginate(4);
+        $prodct =Product::orderBy('created_at','desc')->paginate(18);
         return view('Mainpage')->with('prodct',$prodct);
     }
 
