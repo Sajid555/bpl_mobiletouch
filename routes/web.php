@@ -17,9 +17,6 @@ Route::get('/slider', function () {
     return view('test');
 });
 
-Route::get('ans', function () {
-    return view('ans');
-});
 Route::get('/AddCategory', function () {
     return view('AddCategory');
 });
@@ -161,3 +158,5 @@ Route::get('GetOrderAddress','MainController@GetOrderAddress');
 
 Route::get('GetAllUser','MainController@GetAllUser');
 Route::get('/orders','MainController@order');
+Route::get('ans', 'MainController@ans');
+Route::get('p', 'MainController@popular');

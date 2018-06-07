@@ -119,6 +119,22 @@ class MainController extends Controller {
         return view('Mainpage')->with('prodct',$prodct);
     }
 
+    public function ans() {
+        
+        
+        return view('ans');
+    }
+
+        public function popular()
+        {
+        $data = \App\Product::where('id', '=', 5)->first();
+               dd($data);
+                return view('Mainpage', compact('popular'));
+               
+
+
+
+        }
     public function index() {
         $id = $_GET['id'];
         $brand = Brand::where('cat_id', $id)->get();

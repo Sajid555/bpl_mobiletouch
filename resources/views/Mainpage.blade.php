@@ -1,6 +1,13 @@
+
+
+
+
+
+
 @extends('layouts.mainPage')
 @section('content')
 <div id="main">
+   
    <!--Header/Nav-->
    @include('frontInc.header')
    <br>
@@ -61,7 +68,7 @@
                   </div>
                     <div class="sidebar-block">
                      <div class="sidebar-title">
-                        Brands
+                        SIM
                      </div>
                         <div class="sidebar-content">
                            <div class="brandscroll">
@@ -76,7 +83,7 @@
                   </div>
                   <div class="sidebar-block">
                      <div class="sidebar-title">
-                        Brands
+                        Primary
                      </div>
                         <div class="sidebar-content">
                            <div class="brandscroll">
@@ -91,7 +98,7 @@
                   </div>
                   <div class="sidebar-block">
                      <div class="sidebar-title">
-                        Brands
+                        Front
                      </div>
                         <div class="sidebar-content">
                            <div class="brandscroll">
@@ -106,7 +113,7 @@
                   </div>
                     <div class="sidebar-block">
                      <div class="sidebar-title">
-                        Brands
+                        Internal
                      </div>
                         <div class="sidebar-content">
                            <div class="brandscroll">
@@ -121,7 +128,7 @@
                   </div>
                   <div class="sidebar-block">
                      <div class="sidebar-title">
-                        Brands
+                        OS
                      </div>
                         <div class="sidebar-content">
                            <div class="brandscroll">
@@ -134,7 +141,7 @@
                   </div>
                     <div class="sidebar-block">
                      <div class="sidebar-title">
-                        Brands
+                        Display_type
                      </div>
                         <div class="sidebar-content">
                            <div class="brandscroll">
@@ -149,7 +156,7 @@
                   </div>
                    <div class="sidebar-block">
                      <div class="sidebar-title">
-                        Brands
+                        Resolution
                      </div>
                         <div class="sidebar-content">
                            <div class="brandscroll">
@@ -164,7 +171,7 @@
                   </div>
                    <div class="sidebar-block">
                      <div class="sidebar-title">
-                        Brands
+                        Ram
                      </div>
                         <div class="sidebar-content">
                            <div class="brandscroll">
@@ -179,7 +186,7 @@
                   </div>
                    <div class="sidebar-block">
                      <div class="sidebar-title">
-                        Brands
+                        Protection
                      </div>
                         <div class="sidebar-content">
                            <div class="brandscroll">
@@ -191,6 +198,31 @@
                               @endforeach
                            </div>
                         </div>
+                  </div>
+                   
+
+                  <div class="sidebar-block">
+                  <div class="sidebar-title">
+                
+                  </div>
+                  <div class="sidebar-content">
+                  <div class="sidebar-filters">
+                  <div class="sidebar-filters-title">Batery</div><br>
+                  <select name="price">
+                  <option value="0">Batery</option>
+                  <option value="0-2000">Rs.0-Rs.2000mAh</option>
+                  <option value="2001-5000">Rs.2001-Rs.5000mAh</option>
+                  <option value="5001-10000">Rs.5001-Rs.10000mAh</option>
+                  <option value="10001-20000">Rs.10001-Rs.20000mAh</option>
+                  <option value="20001-40000">Rs.20001-Rs.40000mAh</option>
+                  </select>
+                 
+                  <div class="form-group">
+                  <br>
+                  <button type="Submit" class="btn-default btn1" value="Submit">Submit</button>
+                  </div>
+                  </div>
+                  </div>
                   </div>
                   <div class="sidebar-block">
                   <div class="sidebar-title">
@@ -207,6 +239,7 @@
                   <option value="10001-20000">Rs.10001-Rs.20000</option>
                   <option value="20001-40000">Rs.20001-Rs.40000</option>
                   </select>
+                 
                   <div class="form-group">
                   <br>
                   <button type="Submit" class="btn-default btn1" value="Submit">Submit</button>
