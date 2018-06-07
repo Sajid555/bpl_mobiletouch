@@ -61,7 +61,7 @@
                                  $categry = \App\Category::all();
                                  ?>
                               @foreach($categry as $cats)
-                              <input type="checkbox" name="cat_id" value="{{$cats->id}}"> {{$cats->cat_name}}<br>
+                              <input type="checkbox" name="category[]" value="{{$cats->id}}"> {{$cats->cat_name}}<br>
                               @endforeach
                            </div>
                         </div>

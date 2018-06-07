@@ -65,23 +65,8 @@ class MainController extends Controller {
     }
 
     public function filter(Request $request) {
-        $product = new Product();
-        $product->cat_id = $request->input('cat_id');
-        if ($request->input('price') != '0') {
-            $product->price = $request->input('price');
-            $priceRange = explode("-", $product->price, 2);
-            $min = $priceRange[0];
-            $max = $priceRange[1];
-        }
-        if (empty($request->input('cat_id')) && $request->input('price') == '0') {
-            $prodct = \App\Product::all();
-        } else if ((!empty($request->input('cat_id'))) && $request->input('price') == '0') {
-            $prodct = Product::where('cat_id', '=', $product->cat_id)->get();
-        } else if (empty($request->input('cat_id')) && $request->input('price') != '0') {
-            $prodct = Product::where('price', '>=', $min)->where('price', '<=', $max)->get();
-        } else if ((!empty($request->input('cat_id'))) && $request->input('price') != '0') {
-            $prodct = Product::where('cat_id', '=', $product->cat_id)->where('price', '>=', $min)->where('price', '<=', $max)->get();
-        }
+        $inputs = $request->except('_token');
+        $prodct = \App\Product::filter($inputs);
         return view('Mainpage', compact('prodct'));
     }
 
@@ -115,7 +100,7 @@ class MainController extends Controller {
 
     public function show() {
         
-        $prodct =Product::orderBy('created_at','desc')->paginate(18);
+        $prodct =Product::orderBy('created_at','desc')->paginate(4);
         return view('Mainpage')->with('prodct',$prodct);
     }
 
