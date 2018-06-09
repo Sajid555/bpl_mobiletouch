@@ -22,11 +22,12 @@
         </div>
         <div class="sidebar-content">
             <div class="brandscroll">
-                <?php
+                 <?php
                 $product = \App\Product::all();
-                ?>
-                <input type="checkbox" name="SIM" value="Dual Sim, Dual Standby (Nano-SIM)"> Dual Sim<br>
-                <input type="checkbox" name="SIM" value="Single SIM (Nano-SIM)"> Single Sim  <br>
+                ?>   
+                @foreach($product as $p)
+                <input type="checkbox" name="SIM" value="{{$p->SIM}}" > {{$p->SIM}}<br>
+                @endforeach
             </div>
         </div>
     </div>
@@ -38,10 +39,10 @@
             <div class="brandscroll">
                 <?php
                 $product = \App\Product::all();
-                ?>
-                <input type="checkbox" name="Primary" value="12 MP (f/1.75) + 12 MP (f/2.6), dual-LED dual-tone flash, autofocus">8MP-13MP<br>
-                <input type="checkbox" name="Primary" value="Dual: 16 MP + 5 MP, f/2.0, phase detection autofocus, dual-LED flash">14MP-16MP<br>
-                <input type="checkbox" name="Primary" value="23 MP (f/2.0) + 23 MP (f/2.6), dual-LED dual-tone flash, autofocus">17MP-21MP<br>
+                ?>   
+                @foreach($product as $p)
+                <input type="checkbox" name="Primary" value="{{$p->Primary}}" > {{$p->Primary}}<br>
+                @endforeach
 
             </div>
         </div>
@@ -52,13 +53,12 @@
         </div>
         <div class="sidebar-content">
             <div class="brandscroll">
-                <input type="checkbox" name="Front" value="1.2 MP (f/2.2, 31mm), 720p@30fps, face detection, HDR, FaceTime over Wi-Fi or Cellular - 5 MP, f/2.2">1MP-5MP
-                <br>
-                <input type="checkbox" name="Front" value="5.1 MP, f/2.4, 1080p, HDR - 8 MP (f/2.0, 26mm, 1/3.2, 1.4µm), autofocus, 1080p">6MP-12MP
-                <br>
-                <input type="checkbox" name="Front" value="Dual: 16 MP + 5 MP, f/2.0, phase detection autofocus, dual-LED flash">13MP-16MP
-                <br>
-                <input type="checkbox" name="Front" value="24 MP, f/2.0, 1080p - 25 MP, f/2.0, 1080p ">17MP-25MP<br>
+               <?php
+                $product = \App\Product::all();
+                ?>   
+                @foreach($product as $p)
+                <input type="checkbox" name="Front" value="{{$p->Front}}" > {{$p->Front}}<br>
+                @endforeach
             </div>
         </div>
     </div>
@@ -68,9 +68,12 @@
         </div>
         <div class="sidebar-content">
             <div class="brandscroll">
-                <input type="checkbox" name="Internal" value="16/32/64/128 GB -16/32 GB"> 8GB - 16GB<br>
-                <input type="checkbox" name="Internal" value="16/32 GB-32GB built in-16/32/64/128 GB"> 32GB - 64GB<br>
-                <input type="checkbox" name="Internal" value="32GB built in-64 GB + 64/128 GB"> 128GB - 256GB<br>
+                 <?php
+                $product = \App\Product::all();
+                ?>   
+                @foreach($product as $p)
+                <input type="checkbox" name="Internal" value="{{$p->Internal}}" > {{$p->Internal}}<br>
+                @endforeach
             </div>
         </div>
     </div>
@@ -80,10 +83,12 @@
         </div>
         <div class="sidebar-content">
             <div class="brandscroll">
-                <input type="checkbox" name="OS" value="Android 8.0 (Oreo)-Android V8.1 Oreo  "> Android V8.1 Oreo  <br>
-                <input type="checkbox" name="OS" value="Android 7.1.1 (Nougat)-Android 7.1.1 (Nougat)"> Android 7.1.1 (Nougat)<br>
-                <input type="checkbox" name="OS" value="Android 5.1.1 (Lollipop), upgradable to 7.1.1 (Nougat)-Android 6.0.1 (Marshmallow), upgradable to 7.0 (Nougat)"> Android 5.1.1 (Lollipop) - Android 6.0.1 (Marshmallow)<br>
-                <input type="checkbox" name="OS" value="iOS 11.1.1, upgradable to iOS 11.3-iOS 11.1.1, upgradable to iOS 11.3"> iOS 11.1.1, upgradable to iOS 11.3<br>
+                <?php
+                $product = \App\Product::all();
+                ?>   
+                @foreach($product as $p)
+                <input type="checkbox" name="OS" value="{{$p->OS}}" > {{$p->OS}}<br>
+                @endforeach
             </div>
         </div>
     </div>
@@ -153,9 +158,9 @@
         </div>
         <div class="sidebar-content">
             <div class="sidebar-filters">
-                <div class="sidebar-filters-title">Batery</div><br>
+                <div class="sidebar-filters-title">Battery</div><br>
                 <select name="Capacity">
-                    <option value="">Batery</option>
+                    <option value="">Battery</option>
                     <option value="1000-1500">1000mAh-1500mAh</option>
                     <option value="1501-2499">1501mAh-2499mAh</option>
                     <option value="2500-2999">2500mAh-2999mAh</option>

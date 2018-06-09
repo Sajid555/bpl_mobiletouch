@@ -52,7 +52,12 @@ class Product extends Model {
                     if (isset($search_params['Protection']) && !empty($search_params['Protection'])) {
                         $sql->where('Protection', '=', $search_params['Protection']);
                     }
+                     if (isset($search_params['SIM']) && !empty($search_params['SIM'])) {
+                        $sql->where('SIM', '=', $search_params['SIM']);
+                    }
+                    
                 })->paginate(18);
+
     }
 
 }
