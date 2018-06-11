@@ -99,12 +99,6 @@
 											<input type="text" id="price" name="ebay" class="form-control" placeholder="Enter Ebay price">
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="FormControlFile" class="control-label mb-10"><strong>Product Image</strong></label>
-											<input type="file" id="image" name="image" class="form-control-file">
-										</div>
-									</div>	
 								</div>
 								<?php $photo=\App\photo::all() ?>
 								<div class="row">
@@ -119,6 +113,12 @@
 											</select>
 										</div>
 									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="FormControlFile" class="control-label mb-10"><strong>Product Image</strong></label>
+											<input type="file" id="image" name="image" class="form-control-file">
+										</div>
+									</div>	
 								</div>
 								<div class="seprator-block"></div>
 								<h5 class="txt-dark capitalize-font">Display</h5>

@@ -21,9 +21,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-sm-3"><script > setTimeout(function() {
-    $('.success_message').fadeOut('fast');
-}, 30000);</script>
+            <div class="col-sm-3">
                
               @if (isset(Auth::user()->id))
                <div class="hello1"><a href="{{url('SignOut')}}" >Sign Out</a>
@@ -51,20 +49,15 @@
                <span class="icon-bar"></span>
                </button>
                <div class="navbar-collapse navbar-collapse_ collapse">
-                  <ul class="nav navbar-nav sf-menu clearfix">
-                    
+                  <ul class="nav navbar-nav sf-menu clearfix">                   
                      <li class="sub-menu sub-menu-1"><a href="{{url('/')}}">Mobiles</a></li>
-
-                     <li class="sub-menu sub-menu-1"><a href="#">Computers</a></li>
-                     
-                     <li><a href="#">TV</a></li>
-
-                     <li><a href="#">Appliance</a></li>
-
-                     <li class="sub-menu sub-menu-1"><a href="#">Care</a></li>
-                     <li class="sub-menu sub-menu-1"><a href="#">Best Products</a></li>
-                     <li class="sub-menu sub-menu-1"><a href="#">Deals</a></li>
-
+                     <li class="sub-menu sub-menu-1"><a href="#">Samsunng</a></li>                     
+                     <li class=""><a href="#">I Phone</a></li>
+                     <li><a href="#">Huawei</a></li>
+                     <li><a href="#">Nokia</a></li>
+                     <li><a href="#">Oppo</a></li>
+                     <li><a href="#">Vivo</a></li>
+                     <li><a href="#">HTC</a></li>
                      <li class=""><a href="{{url('/aboutus')}}">About Us</a></li>
                      <li><a href="{{url('/contactus')}}">Contact us</a></li>
                      <li>
