@@ -35,6 +35,12 @@
                <div class="bot2-title">Information</div>
                <ul class="ul0">
                   <li><a href="#" target="_blank">About Us</a></li>
+               </ul>
+            </div>
+             <div class="col-sm-2">
+               <div class="bot2-title">Popular Mobiles</div>
+               <ul class="ul0">
+                  <li><a href="#" target="_blank">About Us</a></li>
                   <li><a href="#" target="_blank">Contact Us</a></li>
                   <li><a href="#" target="_blank">Privacy Policy</a></li>
                   <li><a href="#" target="_blank">Terms & Conditions</a></li>

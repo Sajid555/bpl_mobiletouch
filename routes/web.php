@@ -11,15 +11,17 @@
   |
  */
 
-
+Route::get('/s', function () {
+    return view('HomePage');
+});
+Route::get('addComment', function () {
+    return view('addComment');
+});
 
 Route::get('/slider', function () {
     return view('test');
 });
 
-Route::get('ans', function () {
-    return view('ans');
-});
 Route::get('/AddCategory', function () {
     return view('AddCategory');
 });
@@ -161,3 +163,10 @@ Route::get('GetOrderAddress','MainController@GetOrderAddress');
 
 Route::get('GetAllUser','MainController@GetAllUser');
 Route::get('/orders','MainController@order');
+Route::get('ans', 'MainController@ans');
+Route::get('p', 'MainController@popular');
+Route::post('/saveComment', 'CommentController@saveComment');
+Route::get('/showComment', 'CommentController@showComment')->name('showComment');
+
+//API ROUTES
+Route::get('getUserOrder','OrderController@getUserOrders');

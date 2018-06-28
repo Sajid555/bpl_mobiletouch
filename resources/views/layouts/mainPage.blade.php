@@ -16,6 +16,8 @@
       <link href="{{asset('flextop/css/animate.css')}}" rel="stylesheet">
       <link href="{{asset('flextop/css/style.css')}}" rel="stylesheet">
 
+      <link href="{{asset('flextop/css/stile.css')}}" rel="stylesheet">
+
       <script src="{{asset('flextop/js/jquery.js')}}"></script>
       <script src="{{asset('flextop/js/jquery-ui.js')}}"></script>
       <script src="{{asset('flextop/js/jquery-migrate-1.2.1.min.js')}}"></script>

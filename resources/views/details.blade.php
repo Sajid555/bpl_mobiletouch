@@ -95,14 +95,14 @@
                         </div>
                      </div>
                      <div id="DIV_125">
-                        <a rel="nofollow" href="https://www.mysmartprice.com/out/sendtostore.php?mspid=12867&amp;access_point=desktop&amp;l1=c&amp;top_category=electronics&amp;category=mobile&amp;id=301495601&amp;store=samsungs9&amp;gts_button_type=top_pricetable" id="A_126"></a>
+                        <a rel="nofollow" href="https://www.daraz.pk/phones-tablets/" id="A_126"></a>
                      </div>
                   </div>
                </div>
                <div id="DIV_127">
                   <div id="DIV_128">
                      <div id="DIV_129">
-                        <img src="https://assets.mspcdn.net/q_auto/logos/partners/croma_store.png" id="IMG_130" alt='' />
+                        <img src="{{URL::asset('/image/draz.png')}}" alt="" width="42" height="46" />
                      </div>
                      <div id="DIV_131">
                         Rs:<?php echo ($data->ebay) ?>
@@ -110,7 +110,7 @@
                         </div>
                      </div>
                      <div id="DIV_133">
-                        <a rel="nofollow" href="https://www.mysmartprice.com/out/sendtostore.php?mspid=12867&amp;access_point=desktop&amp;l1=c&amp;top_category=electronics&amp;category=mobile&amp;id=301670064&amp;store=croma&amp;gts_button_type=top_pricetable" id="A_134"></a>
+                        <a rel="nofollow" href="https://www.ebay.com/" id="A_134"></a>
                      </div>
                   </div>
                </div>
@@ -612,6 +612,7 @@
    </div>
 
 </div>
+
 
 
 <!-- Optional JavaScript -->

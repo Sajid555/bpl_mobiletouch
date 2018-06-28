@@ -99,9 +99,21 @@ class MainController extends Controller {
     }
 
     public function show() {
-        
-        $prodct =Product::orderBy('created_at','desc')->paginate(18);
-        return view('Mainpage')->with('prodct',$prodct);
+
+        $prodct = Product::orderBy('created_at', 'desc')->paginate(18);
+        return view('Mainpage')->with('prodct', $prodct);
+    }
+
+    public function ans() {
+
+
+        return view('ans');
+    }
+
+    public function popular() {
+        $data = \App\Product::where('id', '=', 5)->first();
+        dd($data);
+        return view('Mainpage', compact('popular'));
     }
 
     public function index() {
@@ -124,10 +136,10 @@ class MainController extends Controller {
             if ($upload)
                 $inputs['image'] = $newFilename;
         }
-         $save_data  = Product::create($inputs);
-         if($save_data){
+        $save_data = Product::create($inputs);
+        if ($save_data) {
             return view('adminPanel.addProduct');
-         }
+        }
     }
 
     public function GetAllProducts(Request $request) {
@@ -173,30 +185,24 @@ class MainController extends Controller {
         $product = Product::where('id', $id)->get();
         return response()->json($product);
     }
-     public function GetOrderAddress(Request $request)
-    {
-       $Order_Address=\App\Order_Address::all();
-       return response()->json($Order_Address);
 
-
+    public function GetOrderAddress(Request $request) {
+        $Order_Address = \App\Order_Address::all();
+        return response()->json($Order_Address);
     }
-     
-     public function GetAllUser(Request $request)
-    {
-       $user=\App\User::all();
-       return response()->json($user);
+
+    public function GetAllUser(Request $request) {
+        $user = \App\User::all();
+        return response()->json($user);
+    }
+
+    public function order() {
 
 
-    } 
-     public function order()
-         {
+        $Order_Address = \App\Order_Address::all();
 
 
-          $Order_Address=\App\Order_Address::all();
-
-
-          return view('adminPanel.order',compact('Order_Address'));
-
-        }
+        return view('adminPanel.order', compact('Order_Address'));
+    }
 
 }
