@@ -100,7 +100,7 @@ class MainController extends Controller {
 
     public function show() {
         
-        $prodct =Product::orderBy('created_at','desc')->paginate(4);
+        $prodct =Product::orderBy('created_at','desc')->paginate(18);
         return view('Mainpage')->with('prodct',$prodct);
     }
 
