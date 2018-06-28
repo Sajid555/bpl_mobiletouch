@@ -167,3 +167,6 @@ Route::get('ans', 'MainController@ans');
 Route::get('p', 'MainController@popular');
 Route::post('/saveComment', 'CommentController@saveComment');
 Route::get('/showComment', 'CommentController@showComment')->name('showComment');
+
+//API ROUTES
+Route::get('getUserOrder','OrderController@getUserOrders');
