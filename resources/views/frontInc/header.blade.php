@@ -4,7 +4,7 @@
          <div class="top2 clearfix">
             <div class="col-sm-3">
                <header>
-                  <div class="logo_wrapper">
+                  <div class="log">
                      <a href="{{url('/')}}" class="logo">
                      <img src="{{asset('flextop/images/MTLogo.png')}}" alt="" class="img-responsive" title="Logo">
                      </a>
@@ -52,14 +52,12 @@
                   <ul class="nav navbar-nav sf-menu clearfix">                   
                      <li class="sub-menu sub-menu-1"><a href="{{url('/')}}">Mobiles</a></li>
                      <li class="sub-menu sub-menu-1"><a href="#">Samsunng</a></li>                     
-                     <li class=""><a href="#">I Phone</a></li>
-                     <li><a href="#">Huawei</a></li>
-                     <li><a href="#">Nokia</a></li>
-                     <li><a href="#">Oppo</a></li>
-                     <li><a href="#">Vivo</a></li>
-                     <li><a href="#">HTC</a></li>
-                     <li class=""><a href="{{url('/aboutus')}}">About Us</a></li>
-                     <li><a href="{{url('/contactus')}}">Contact us</a></li>
+                     <li class="sub-menu sub-menu-1"><a href="#">I Phone</a></li>
+                     <li class="sub-menu sub-menu-1"><a href="#">Huawei</a></li>
+                     <li class="sub-menu sub-menu-1"><a href="#">Nokia</a></li>
+                     <li class="sub-menu sub-menu-1"><a href="#">Oppo</a></li>
+                     <li class="sub-menu sub-menu-1"><a href="#">Vivo</a></li>
+                     <li class="sub-menu sub-menu-1"><a href="#">HTC</a></li>
                      <li>
                      <a href="{{url('/cart')}}">View Cart</a>
                      </li>

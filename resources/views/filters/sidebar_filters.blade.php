@@ -184,6 +184,13 @@
                     <option value="5001-10000">Rs.5001-Rs.10000</option>
                     <option value="10001-20000">Rs.10001-Rs.20000</option>
                     <option value="20001-40000">Rs.20001-Rs.40000</option>
+
+                    <option value="2001-50000">Rs.2001-Rs.50000</option>
+                    <option value="50000-60000">Rs.50000-Rs.60000</option>
+                    <option value="50000-70000">Rs.50000-Rs.70000</option>
+                    <option value="50000-99000">Rs.50000-Rs.99000</option>
+
+                    <option value="2000-99000">Rs.2000-Rs.99000</option>
                 </select>
 
                 <div class="form-group">
