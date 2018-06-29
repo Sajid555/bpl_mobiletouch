@@ -162,3 +162,4 @@ Route::get('/showComment', 'CommentController@showComment')->name('showComment')
 
 //API ROUTES
 Route::get('getUserOrder','OrderController@getUserOrders');
+Route::get('getFilters','FilterController@getFilters');

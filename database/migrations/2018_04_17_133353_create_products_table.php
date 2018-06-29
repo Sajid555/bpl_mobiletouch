@@ -31,6 +31,8 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('model_id');
 
             $table->foreign('model_id')->references('id')->on('models');
+            $table->unsignedInteger('comment_id');
+            $table->foreign('comment_id')->references('id')->on('comments');
             $table->timestamps();
         });
     }

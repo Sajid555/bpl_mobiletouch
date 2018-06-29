@@ -100,6 +100,8 @@ class CreateProductsTable extends Migration
              $table->timestamps();
              
              $table->foreign('image_id')->references('id')->on('photos');
+             $table->unsignedInteger('comment_id');
+            $table->foreign('comment_id')->references('id')->on('comments');
              $table->timestamps();
         });
     }

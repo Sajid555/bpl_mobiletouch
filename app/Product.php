@@ -59,5 +59,7 @@ class Product extends Model {
                 })->paginate(18);
 
     }
+    
+
 
 }
