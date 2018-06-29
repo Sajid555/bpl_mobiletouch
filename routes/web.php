@@ -70,15 +70,7 @@ Route::get('/getmodel/', 'MainController@model');
 // Route::post('/addproduct', 'MainController@addproduct');
 Route::post('/insert', 'MainController@File');
 Route::post('/filter', 'MainController@filter');
-
-// Route::filter('scan', function()
-// {
-//     if (Input::get('price') >= 2000)
-//     {
-//         return Redirect::to('Main');
-//     }
-// });
-// Route::get('/show', 'MainController@search');
+Route::get('/show', 'MainController@search');
 
 Route::get('/adminlogin', function () {
     return view('adminPanel.login');

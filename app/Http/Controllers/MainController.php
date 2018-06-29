@@ -67,8 +67,10 @@ class MainController extends Controller {
     public function filter(Request $request) {
         $inputs = $request->except('_token');
         $prodct = \App\Product::filter($inputs);
-        return view('Mainpage', compact('prodct'));
+        
     }
+
+
 
     public function addcategory(Request $request) {
         $Category = new Category();
