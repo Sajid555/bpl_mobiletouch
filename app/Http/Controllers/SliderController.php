@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\slider;
 use Illuminate\Support\Facades\Input;
+use Redirect;
 
 class SliderController extends Controller
 {
@@ -69,5 +70,9 @@ public function update ($id)
 public function viewImages(){
 $data=slider::all();
 	return view('viewImages',compact('data'));
+}
+public function deleteImage($id){
+	slider::where('id','=',$id)->delete();
+	return Redirect::back();
 }
 }
