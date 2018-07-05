@@ -181,5 +181,6 @@ Route::get('getUserOrder','OrderController@getUserOrders');
 Route::get('slider', function () {
     return view('slider');
 });
+Route::get('viewImages','SliderController@viewImages')->name('viewImages');
 Route::post('sliderImages','SliderController@sliderImages')->name('sliderImages');
 Route::post('update/{id}','SliderController@update')->name('update');

@@ -1,36 +1,42 @@
-@extends('layouts.addProductApp')
-@section('content')
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
 
-<div class="container-fluid">
-  <!-- Title -->
-    <div class="row heading-bg">
-      <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h5 class="txt-dark">Add Slider Images</h5>
-      </div>
-    </div>
-  <!-- /Title -->
-  <div class="row">
-    <div class="col-md-6">
-      <div class="panel panel-default card-view">
-        <div class="panel-wrapper collapse in">
-          <div class="panel-body">
-            <div class="form-wrap">
-              <form action="{{url('/sliderImages')}}" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
-                <div class="form-group">
-                  <input type="file" name="image1" id="image1">
-                  <input type="file" name="image2" id="image2">
-                  <input type="file" name="image3" id="image3">
-                </div>
-                
-                <button type="Submit" class="btn  btn-primary">Submit New</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 
-@endsection'
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Images Table</h2>
+
+<table >
+  <tr>
+    <th>ID</th>
+    <th>Images</th>
+    <th>Delete</th>
+  </tr>
+  @foreach ($data as $img)
+  <tr>
+  <th>{{$img->id}}</th>
+  <th>{{$img->image1}}</th>
+  <td><input type="button" name="button" value="remove"></td>
+  </tr>
+  @endforeach
+</table>
+
+</body>
+</html>

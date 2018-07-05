@@ -66,4 +66,8 @@ public function update ($id)
     return "success";
 }
 }
+public function viewImages(){
+$data=slider::all();
+	return view('viewImages',compact('data'));
+}
 }
