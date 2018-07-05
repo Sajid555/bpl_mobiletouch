@@ -8,12 +8,13 @@ use App\Product;
 
 class FilterController extends Controller
 {
-    public function getFilters(Request $request){
+    public function getFilters(){
+    	
 
-		$orders = Product::where(function($sql) use($request)
+		$orders = Product::where(function($sql) use($search_params)
 		{
-			if (isset($request['Primary']) && !empty($request['Primary'])) {
-                        $sql->where('Primary', '=', $request['Primary']);
+			if (isset($search_params['Primary']) && !empty($search_params['Primary'])) {
+                        $sql->where('Primary', '=', $search_params['Primary']);
                     }
 		});
 		if(!empty($orders)){

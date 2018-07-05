@@ -17,6 +17,26 @@ class MainController extends Controller {
         return view('adminPanel.product', compact('Product'));
     }
 
+    public function showSelectedProductsWithCategory($id) {
+        $Product = Product::where('cat_id', $id)->get();
+        return view('Mainpage', compact('Product'));
+    }
+
+ public function frontpage() {
+    return view("FrontPage");
+    }
+
+
+           public function search(Request $request) {
+    
+             $search=$request->search;
+             $data=Product::where("cat_id","%Like%",$search)->get();
+               return view("Mainpage",compact("data"));     
+
+    }
+
+
+
     public function imageStore(Request $request) {
         $product = new photo();
         $file = Input::file("image");
@@ -66,15 +86,34 @@ class MainController extends Controller {
 
     public function filter(Request $request) {
         $inputs = $request->except('_token');
-        $prodct = \App\Product::filter($inputs);
+        $Product = \App\Product::filter($inputs);
         
+         return view('Mainpage', compact('Product'));
+
     }
+    public function showproducts()
+    {
+      $Product=\App\Product::all();
+       return view("Mainpage",compact("Product"));
+
+    }
+    public function getFilterProduct(Request $request) {
+
+        $inputs = $request->except('_token');
+        $Product = \App\Product::filter($inputs);          
+        return response()->json($Product);
+
+           }
 
 
 
     public function addcategory(Request $request) {
-        $Category = new Category();
-        $Category->cat_name = $request->input('cat_name');
+
+        $this->validate($request, [
+            'cat_name' => 'required|min:3',
+            'image' => 'required|   mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $file = Input::file("image");
         if (!empty($file)) {
             $newFilename = $file->getClientOriginalName();
@@ -83,6 +122,11 @@ class MainController extends Controller {
             if ($upload)
                 $Category->image = $newFilename;
         }
+
+        $Category = new Category();
+        $Category->cat_name =  $request->visaName;
+        $Category->image = $imageName;
+
         $Category->save();
         return view('adminPanel.addBrand');
     }
@@ -114,7 +158,6 @@ class MainController extends Controller {
 
     public function popular() {
         $data = \App\Product::where('id', '=', 5)->first();
-        dd($data);
         return view('Mainpage', compact('popular'));
     }
 
@@ -206,5 +249,6 @@ class MainController extends Controller {
 
         return view('adminPanel.order', compact('Order_Address'));
     }
+    
 
 }

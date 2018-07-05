@@ -11,6 +11,9 @@
   |
  */
 
+Route::get("/","MainController@showproducts");
+
+
 Route::get('/s', function () {
     return view('HomePage');
 });
@@ -40,12 +43,20 @@ Route::get('/Main', function () {
 Route::get('/check', function () {
     return view('check');
 });
+Route::get('/', 'MainController@frontpage');
+
+
+Route::get('/search', 'MainController@search');
+
+
+
+Route::get('/home/{id}', 'MainController@showSelectedProductsWithCategory')->name("select");
 
 Route::get('/main/{id}', 'MainController@showProductsWithCategory');
 Route::post('/AddCategory', 'MainController@addcategory');
 Route::post('/AddBrand', 'MainController@addbrand');
 Route::post('/addmodel', 'MainController@addmodel');
-Route::get('/', 'MainController@show')->name('show');
+// Route::get('/', 'MainController@show')->name('show');
 Route::get('/addToCart/{id}', 'CartController@addToCart')->name('addToCart');
 Route::get('/cart', 'CartController@getCart')->name('getCart');
 Route::get('/cart/clear', 'CartController@clearCart')->name('clearCart');
@@ -61,7 +72,8 @@ Route::get('/kash', function() {
 });
 Route::get('/insert', function() {
     return view('insert');
-});
+});\
+
 Route::post('/imageStore', 'MainController@imageStore')->name('imageStore');
 Route::get('/getSubCategory/', 'MainController@index');
 
@@ -154,6 +166,10 @@ Route::get('/contactus', function () {
 Route::get('GetOrderAddress','MainController@GetOrderAddress');
 
 Route::get('GetAllUser','MainController@GetAllUser');
+
+
+Route::get('getFilters','MainController@getFilterProduct');
+
 Route::get('/orders','MainController@order');
 Route::get('ans', 'MainController@ans');
 Route::get('p', 'MainController@popular');
@@ -162,4 +178,6 @@ Route::get('/showComment', 'CommentController@showComment')->name('showComment')
 
 //API ROUTES
 Route::get('getUserOrder','OrderController@getUserOrders');
-Route::get('getFilters','FilterController@getFilters');
+Route::get('slider', function () {
+    return view('slider');
+});
