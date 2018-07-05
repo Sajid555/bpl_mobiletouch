@@ -22,8 +22,8 @@
                   <input type="file" name="image2" id="image2">
                   <input type="file" name="image3" id="image3">
                 </div>
-                <a href="{{url('/addproducts')}}" class="btn btn-primary">View Images</a>
-                <button type="button" class="btn  btn-primary">Submit New</button>
+                
+                <button type="Submit" class="btn  btn-primary">Submit New</button>
               </form>
             </div>
           </div>
@@ -33,4 +33,4 @@
   </div>
 </div>
 
-@endsection
+@endsection'

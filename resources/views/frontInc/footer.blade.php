@@ -5,7 +5,7 @@
             <div class="col-sm-6">
                <div class="logo2">
                   <a href="{{url('/')}}">
-                  <img src="{{asset('flextop/images/MTLogo.png')}}" alt="" class="img-responsive" title="">
+                  <img src="{{asset('flextop/images/footerlogo.png')}}" alt="" class="img-responsive" title="">
                   </a>
                </div>
                <div class="contact-details">

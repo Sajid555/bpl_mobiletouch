@@ -20,17 +20,17 @@
                 <div id="slider_wrapper">
                     <div id="slider">
                         <div id="flexslider">
+
+                     <?php $slider=App\slider::all();?>
+                                
                             <ul class="slides clearfix">
+                           @foreach($slider as $Slider)
                                 <li>
-                                    <img src="{{asset('flextop/images/galaxy S7 edge.jpg')}}" alt="">
+                                    <img src="{{asset('images') . '/'.$Slider->image1}}" alt="">
                                 </li>
-                                <li>
-                                    <img src="{{asset('flextop/images/huawei mate 9.jpg')}}" alt="">
-                                </li>
-                                <li>
-                                    <img src="{{asset('flextop/images/iphone x.jpg')}}" alt="">
-                                </li>
-                            </ul>
+                                 @endforeach
+                            
+                         
                             </ul>
                         </div>
                     </div>
