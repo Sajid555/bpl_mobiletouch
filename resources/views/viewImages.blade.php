@@ -31,8 +31,8 @@ tr:nth-child(even) {
   </tr>
   @foreach ($data as $img)
   <tr>
-  <th>{{$img->id}}</th>
-  <th>{{$img->image1}}</th>
+  <td>{{$img->id}}</td>
+  <td><img src="{{asset('images') . '/'.$img->image1}}" alt="" width="40px" height="60px"></td>
   <td><input type="button" name="button" value="remove"></td>
   </tr>
   @endforeach
