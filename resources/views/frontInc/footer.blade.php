@@ -80,31 +80,31 @@
             <div class="col-sm-6">
                <div class="cards">
                   <div class="card">
-                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment01.png')}}" alt="" class="img-responsive" title="">
+                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment01.png')}}" alt="" class="img-pay" title="">
                      </a>
                   </div>
                   <div class="card">
-                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment02.png')}}" alt="" class="img-responsive" title="">
+                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment02.png')}}" alt="" class="img-pay" title="">
                      </a>
                   </div>
                   <div class="card">
-                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment03.png')}}" alt="" class="img-responsive" title="">
+                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment03.png')}}" alt="" class="img-pay" title="">
                      </a>
                   </div>
                   <div class="card">
-                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment04.png')}}" alt="" class="img-responsive" title="">
+                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment04.png')}}" alt="" class="img-pay" title="">
                      </a>
                   </div>
                   <div class="card">
-                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment05.png')}}" alt="" class="img-responsive" title="">
+                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment05.png')}}" alt="" class="img-pay" title="">
                      </a>
                   </div>
                   <div class="card">
-                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment06.png')}}" alt="" class="img-responsive" title="">
+                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment06.png')}}" alt="" class="img-pay" title="">
                      </a>
                   </div>
                   <div class="card">
-                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment07.png')}}" alt="" class="img-responsive" title="">
+                     <a href="#" target="_blank"><img src="{{asset('flextop/images/payment07.png')}}" alt="" class="img-pay" title="">
                      </a>
                   </div>
                </div>

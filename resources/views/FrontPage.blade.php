@@ -11,7 +11,7 @@
     <div class="main-hdr-wrpr">
         <div class="main-hdr">
             <a class="hdr-logo" href="#">
-                <img class="hdr-logo__img" src="https://assets.mspcdn.net/fl_lossy/logos/mysmartprice/owl/white.png" alt="MySmartPrice" />
+                <img class="hdr-logo__img" src="{{asset('flextop/images/headerlogo.png')}}" alt="MySmartPrice" />
             </a>
             <div class="srch-wdgt ui-front">
                 <form class="js-srch-wdgt__frm" method="POST" action="{{url('/search')}}">

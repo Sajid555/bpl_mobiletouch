@@ -183,5 +183,5 @@ Route::get('slider', function () {
 });
 Route::get('viewImages','SliderController@viewImages')->name('viewImages');
 Route::post('sliderImages','SliderController@sliderImages')->name('sliderImages');
-Route::get('update/{id}','SliderController@update')->name('update');
+Route::post('update/{id}','SliderController@update')->name('update');
 Route::get('deleteImage/{id}','SliderController@deleteImage')->name('deleteImage');
