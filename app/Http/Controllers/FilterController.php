@@ -16,7 +16,8 @@ class FilterController extends Controller
     				$sql->whereIn('cat_id', $inputs['cat_id']);
     			}
     	})->get();
-    	// $data=Product::where(function($sql) use ($param)
+
+    	
     	// 	if (isset($param['cat_id']) && !empty($param['cat_id'])) {
      //            $sql->where('cat_id', $param['cat_id']);
      //            );
