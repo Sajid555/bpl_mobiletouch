@@ -20,17 +20,17 @@
                 <div id="slider_wrapper">
                     <div id="slider">
                         <div id="flexslider">
+
+                     <?php $slider=App\slider::all();?>
+                                
                             <ul class="slides clearfix">
+                           @foreach($slider as $Slider)
                                 <li>
-                                    <img src="{{asset('flextop/images/galaxy S7 edge.jpg')}}" alt="">
+                                    <img src="{{asset('images') . '/'.$Slider->image1}}" alt="">
                                 </li>
-                                <li>
-                                    <img src="{{asset('flextop/images/huawei mate 9.jpg')}}" alt="">
-                                </li>
-                                <li>
-                                    <img src="{{asset('flextop/images/iphone x.jpg')}}" alt="">
-                                </li>
-                            </ul>
+                                 @endforeach
+                            
+                         
                             </ul>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                     @include('filters.sidebar_filters')
                     <div class="col-sm-8 column-content">
                         @if(Session::has('error_message'))
-                        <?php dd('here'); ?>
+                       
                         <div class="alert alert-danger">
                             <strong>Error!</strong> {{Session::get('error_message')}}
                         </div>
@@ -67,7 +67,7 @@
                             <div id="tabs2-1">
                                 <div class="row col-md-12">
                                     <?php $count = 1; ?>
-                                    @foreach($prodct as $book)
+                                    @foreach($Product as $book)
                                     @if($count==7)
                                     <?php
                                     $htmlCode = '</div> <div class="row col-md-12">';
@@ -177,7 +177,6 @@
             <div class=" col-sm-10 pane2 clearfix">
                 <ul class="pager clearfix">
                 </ul>
-                <div  > {{ $prodct->links() }}</div>
             </div>
         </div>
     </div>

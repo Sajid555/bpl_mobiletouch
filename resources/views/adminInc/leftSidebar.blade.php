@@ -33,6 +33,9 @@
 					<a href="{{url('/insert')}}">Add Multipule Images</a>
 				</li>
 				<li>
+					<a href="{{url('/slider')}}">Add slider images</a>
+				</li>
+				<li>
 					<a href="{{url('/orders')}}">Orders</a>
 				</li>
 				<li>

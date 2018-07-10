@@ -20,7 +20,7 @@
 								<div class="form-group">
 									<input type="file" name="image" id="image" >
 									<label class="control-label mb-10">Add new Brand</label>
-									<input type="text" class="form-control" name="cat_name" placeholder="Enter new brand name">
+									<input type="text" class="form-control" name="cat_name" placeholder="Enter new brand name" required autofocus>
 								</div>
 								<button type="submit" class="btn  btn-primary">Submit</button>
 							</form>

@@ -22,7 +22,7 @@
 								{{ csrf_field() }}
 								<div class="form-group">
 									<label class="control-label mb-10">Select Brand</label>
-											<select class="form-control" data-placeholder="" name="cat_id" tabindex="1">
+											<select class="form-control" data-placeholder="" name="cat_id" tabindex="1" required>
 												@foreach($p as $prdct)
 					              <option  value="{{$prdct->id}}">{{$prdct->cat_name}}</option>
 					                     @endforeach
@@ -30,7 +30,7 @@
 								</div>
 								<div class="form-group">
 									<label class="control-label mb-10">Add new Model</label>
-									<input type="text" class="form-control" name="brand_name" placeholder="Enter new model name">
+									<input type="text" class="form-control" name="brand_name" placeholder="Enter new model name" required autofocus>
 								</div>
 								<button type="submit" class="btn  btn-primary">Submit</button>
 							</form>

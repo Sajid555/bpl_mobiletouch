@@ -1133,8 +1133,23 @@ img {
   padding-bottom: 5px;
 
 }
-.img-responsive {
-      margin-left: 0px;
+.img-pay,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  max-width: 102%;
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+}
+
+.imge-responsive {    height: 66px;
+    margin-top: -25px;
+    width: 180px;
+      margin-left: 147px !important;
 }
 .img-rounded {
   border-radius: 6px;

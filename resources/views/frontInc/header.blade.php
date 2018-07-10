@@ -6,7 +6,7 @@
                <header>
                   <div class="log">
                      <a href="{{url('/')}}" class="logo">
-                     <img src="{{asset('flextop/images/MTLogo.png')}}" alt="" class="img-responsive" title="Logo">
+                     <img src="{{asset('flextop/images/headerlogo.png')}}" alt="" class="imge-responsive" title="Logo">
                      </a>
                   </div>
                </header>

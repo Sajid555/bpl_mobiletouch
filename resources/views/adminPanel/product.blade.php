@@ -36,7 +36,7 @@
                               echo $productName[0]->brand_name; 
 
                         ?></a>
-</h6>
+								</h6>
 								<span class="head-font block text-warning font-16">{{$product->price}}</span>
 							</div>
 						</article>

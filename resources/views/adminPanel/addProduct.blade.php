@@ -24,7 +24,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Category</strong></label>
-											<select class="form-control ProductCategory" id="ProductCategory" data-placeholder="Choose a Category" tabindex="1" name="cat_id">
+											<select class="form-control ProductCategory" id="ProductCategory" data-placeholder="Choose a Category" tabindex="1" name="cat_id" required>
 												<option selected disabled>Select the Category</option>
 												 @foreach($cat as $c)
                                                 <option value="{{$c->id}}">{{$c->cat_name}}</option>
@@ -36,7 +36,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Brand</strong></label>
-											<select class="form-control brand" id="brand_id" data-placeholder="Choose a Category" tabindex="1" name="brand_id">
+											<select class="form-control brand" id="brand_id" data-placeholder="Choose a Category" tabindex="1" name="brand_id" required>
 												<option selected disabled>Select the Brand</option>
 												       @foreach($brand as $b)
                                                 <option value="{{$b->brand_id}}">{{$b->brand_name}}</option>
@@ -66,7 +66,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Product Price</strong></label>
-											<input type="text" id="price" name="price" class="form-control" placeholder="Enter product price">
+											<input type="text" id="price" name="price" class="form-control" placeholder="Enter product price" required autofocus>
 										</div>
 									</div>
 
@@ -81,14 +81,14 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Daraz Price</strong></label>
-											<input type="text" id="price" name="drazpk" class="form-control" placeholder="Enter Daraz price">
+											<input type="text" id="price" name="drazpk" class="form-control" placeholder="Enter Daraz price" required autofocus>
 										</div>
 									</div>
 
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>FlipCart Price</strong></label>
-											<input type="text" id="price" name="flipcart" class="form-control" placeholder="Enter FlipCart price">
+											<input type="text" id="price" name="flipcart" class="form-control" placeholder="Enter FlipCart price" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -96,7 +96,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Ebay Price</strong></label>
-											<input type="text" id="price" name="ebay" class="form-control" placeholder="Enter Ebay price">
+											<input type="text" id="price" name="ebay" class="form-control" placeholder="Enter Ebay price" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -105,7 +105,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Slider Image</strong></label>
-											<select class="form-control ProductCategory" id="ProductCategory" data-placeholder="Choose a Category" tabindex="1" name="image_id">
+											<select class="form-control ProductCategory" id="ProductCategory" data-placeholder="Choose a Category" tabindex="1" name="image_id" required autofocus>
 												<option selected disabled>Select slider images</option>
 												@foreach($photo as $p)
                                                 <option value="{{$p->id}}">{{$p->img_name}}</option>
@@ -116,7 +116,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label for="FormControlFile" class="control-label mb-10"><strong>Product Image</strong></label>
-											<input type="file" id="image" name="image" class="form-control-file">
+											<input type="file" id="image" name="image" class="form-control-file" required autofocus>
 										</div>
 									</div>	
 								</div>
@@ -127,24 +127,24 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Display Type</strong></label>
-											<select class="form-control" name="display_type" data-placeholder="Choose a Category" tabindex="1">
+											<select class="form-control" name="display_type" data-placeholder="Choose a Category" tabindex="1" required>
 
-                         <option  value="IPS-LCD ">IPS-LCD </option>
+					                         <option  value="IPS-LCD ">IPS-LCD </option>
 
-                         <option  value="Resistive Touchscreen LCD ">Resistive Touchscreen LCD </option>
-                         <option  value="Capacitive Touch screen LCD ">Capacitive Touch screen LCD </option>
-                         <option  value="OLED ">OLED </option>
-                         <option  value="AMOLED Retina Display ">AMOLED Retina Display </option>
-                         <option  value="Haptic ">Haptic </option>
-                         <option  value="Tactile touch screen ">Tactile touch screen</option>
-                         <option  value="Gorilla Glass ">Gorilla Glass </option>
-                     </select>
+					                         <option  value="Resistive Touchscreen LCD ">Resistive Touchscreen LCD </option>
+					                         <option  value="Capacitive Touch screen LCD ">Capacitive Touch screen LCD </option>
+					                         <option  value="OLED ">OLED </option>
+					                         <option  value="AMOLED Retina Display ">AMOLED Retina Display </option>
+					                         <option  value="Haptic ">Haptic </option>
+					                         <option  value="Tactile touch screen ">Tactile touch screen</option>
+					                         <option  value="Gorilla Glass ">Gorilla Glass </option>
+					                     	</select>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Resolution</strong></label>
-											<input type="text" id="price" name="Resolution" class="form-control" placeholder="Enter resolution">
+											<input type="text" id="price" name="Resolution" class="form-control" placeholder="Enter resolution" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -153,14 +153,14 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Size</strong></label>
-											<input type="text" class="form-control" name="Size" placeholder="Enter size">
+											<input type="text" class="form-control" name="Size" placeholder="Enter size" required autofocus>
 										</div>
 									</div>
 									<!--/span-->
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Pixel Density</strong></label>
-											<input type="text" class="form-control" name="Pixel_Density" placeholder="Enter pixel density">
+											<input type="text" class="form-control" name="Pixel_Density" placeholder="Enter pixel density"required autofocus>
 										</div>
 									</div>
 								</div>
@@ -169,14 +169,14 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Touchscreen type</strong></label>
-											<input type="text" class="form-control" name="Touchscreen_type" placeholder="Enter screen type">
+											<input type="text" class="form-control" name="Touchscreen_type" placeholder="Enter screen type" required autofocus>
 										</div>
 									</div>
 									<!--/span-->
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Color Reproduction</strong></label>
-											<input type="text" class="form-control" name="Color_Reproduction"  placeholder="Enter pixel color reproduction">
+											<input type="text" class="form-control" name="Color_Reproduction"  placeholder="Enter pixel color reproduction" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -185,14 +185,14 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Protection</strong></label>
-											<input type="text" class="form-control" name="Protection" id="Protection" placeholder="Enter protection">
+											<input type="text" class="form-control" name="Protection" id="Protection" placeholder="Enter protection" required autofocus>
 										</div>
 									</div>
 									<!--/span-->
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Screen to Body %</strong></label>
-											<input type="text" class="form-control" name="Screen_to_body_percentage" placeholder="Enter pixel density">
+											<input type="text" class="form-control" name="Screen_to_body_percentage" placeholder="Enter pixel density" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -204,14 +204,14 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10" for="Dimensions"><strong>Dimensions</strong></label>
-											<input type="text" class="form-control" name="Dimensions" id="Dimensions" placeholder="Enter dimension">
+											<input type="text" class="form-control" name="Dimensions" id="Dimensions" placeholder="Enter dimension" required autofocus>
 										</div>
 									</div>
 									<!--/span-->
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Weight</strong></label>
-											<input type="text" class="form-control" name="Weight" placeholder="Enter weight">
+											<input type="text" class="form-control" name="Weight" placeholder="Enter weight" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -223,7 +223,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Operating System</strong></label>
-											<input type="text" id="OS" class="form-control"  name="OS" placeholder="Enter OS">
+											<input type="text" id="OS" class="form-control"  name="OS" placeholder="Enter OS" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -274,20 +274,20 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Primary</strong></label>
-											<input type="text" name="Primary" class="form-control" placeholder="Enter primary Camera">
+											<input type="text" name="Primary" class="form-control" placeholder="Enter primary Camera" required autofocus>
 										</div>
 									</div>
 									<!--/span-->
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Front</strong></label>
-											<input type="text" class="form-control" name="Front" placeholder="Enter front Camera">
+											<input type="text" class="form-control" name="Front" placeholder="Enter front Camera" required autofocus>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Video</strong></label>
-											<input type="text" class="form-control" name="Video" placeholder="Enter video @fps">
+											<input type="text" class="form-control" name="Video" placeholder="Enter video @fps" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -299,20 +299,20 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Internal</strong></label>
-											<input type="text" class="form-control" name="Internal" placeholder="Enter internal memory">
+											<input type="text" class="form-control" name="Internal" placeholder="Enter internal memory" required autofocus>
 										</div>
 									</div>
 									<!--/span-->
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>RAM</strong></label>
-											<input type="text" class="form-control" name="RAM" placeholder="Enter RAM">
+											<input type="text" class="form-control" name="RAM" placeholder="Enter RAM" required autofocus>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Expandable</strong></label>
-											<input type="text" class="form-control" name="Expandable" placeholder="Enter expandable memory">
+											<input type="text" class="form-control" name="Expandable" placeholder="Enter expandable memory" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -324,14 +324,14 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Type</strong></label>
-											<input type="text" class="form-control" name="Type" placeholder="Enter battery type">
+											<input type="text" class="form-control" name="Type" placeholder="Enter battery type" required autofocus>
 										</div>
 									</div>
 									<!--/span-->
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Capacity</strong></label>
-											<input type="text" class="form-control" name="Capacity" placeholder="Enter battery capacity">
+											<input type="text" class="form-control" name="Capacity" placeholder="Enter battery capacity" required autofocus>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -362,14 +362,14 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Bluetooth</strong></label>
-											<input type="text" class="form-control" name="Bluetooth" placeholder="Enter bluetooth">
+											<input type="text" class="form-control" name="Bluetooth" placeholder="Enter bluetooth" required autofocus>
 										</div>
 									</div>
 									<!--/span-->
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Wi-Fi</strong></label>
-											<input type="text" class="form-control" placeholder="Enter Wi-Fi">
+											<input type="text" class="form-control" placeholder="Enter Wi-Fi" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -532,13 +532,13 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Variant</strong></label>
-											<input type="text" id="price" name="Variant" class="form-control" placeholder="Enter variant">
+											<input type="text" id="price" name="Variant" class="form-control" placeholder="Enter variant" required autofocus>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Architecture</strong></label>
-											<input type="text" id="price" name="Architecture" class="form-control" placeholder="Enter Architecture">
+											<input type="text" id="price" name="Architecture" class="form-control" placeholder="Enter Architecture" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -547,14 +547,14 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>No. of Cores</strong></label>
-											<input type="text" class="form-control" name="Cores" placeholder="Enter no of cores">
+											<input type="text" class="form-control" name="Cores" placeholder="Enter no of cores" required autofocus>
 										</div>
 									</div>
 									<!--/span-->
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Make</strong></label>
-											<input type="text" class="form-control" name="Make" placeholder="Enter make">
+											<input type="text" class="form-control" name="Make" placeholder="Enter make" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -563,14 +563,14 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Frequency</strong></label>
-											<input type="text" class="form-control"  name="Frequency" placeholder="Enter frequency">
+											<input type="text" class="form-control"  name="Frequency" placeholder="Enter frequency" required autofocus>
 										</div>
 									</div>
 									<!--/span-->
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>GPU</strong></label>
-											<input type="text" class="form-control" name="GPU" placeholder="Enter GPU">
+											<input type="text" class="form-control" name="GPU" placeholder="Enter GPU" required autofocus>
 										</div>
 									</div>
 								</div>
@@ -727,7 +727,7 @@
 								</div>
 								<!--/row-->
 								<div class="form-actions">
-									<button class="btn btn-success btn-icon left-icon mr-10 pull-left"> <i class="fa fa-check"></i> <span>save</span></button>
+									<button class="btn btn-success btn-icon left-icon mr-10 pull-left"> <i class="fa fa-check"></i> <span>Save</span></button>
 									<button type="button" class="btn btn-warning pull-left">Cancel</button>
 									<div class="clearfix"></div>
 								</div>
