@@ -12,6 +12,7 @@
         "laravel/framework": "5.6.*",
         "laravel/passport": "^6.0",
         "laravel/tinker": "^1.0",
+        "laravelcollective/html": "^5.6",
         "okipa/laravel-toggle-switch-button": "^1.0",
         "stripe/stripe-php": "^6.6"
     },

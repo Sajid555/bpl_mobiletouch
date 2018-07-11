@@ -15,6 +15,7 @@ class Product extends Model {
         return Product::where(function($sql) use($search_params) {
                     if (isset($search_params['brand']) && !empty($search_params['brand'])) {
                         $sql->whereIn('cat_id', $search_params['brand']);
+                        
                     }
                     if (isset($search_params['price']) && !empty($search_params['price'])) {
                         $price = explode("-", $search_params['price']);

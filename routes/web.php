@@ -43,7 +43,7 @@ Route::get('/Main', function () {
 Route::get('/check', function () {
     return view('check');
 });
-Route::get('/', 'MainController@frontpage');
+Route::get('/', 'MainController@frontpage')->name('show');
 
 
 Route::get('/search', 'MainController@search');
@@ -90,6 +90,9 @@ Route::get('/adminlogin', function () {
 
 Route::get('/adminSignup', function () {
     return view('adminPanel.signup');
+});
+Route::get('/changePassword', function () {
+    return view('adminPanel.changePassword');
 });
 Auth::routes();
 Route::get('/viewtable', 'AdminController@table')->name('viewtable');
@@ -185,3 +188,8 @@ Route::get('viewImages','SliderController@viewImages')->name('viewImages');
 Route::post('sliderImages','SliderController@sliderImages')->name('sliderImages');
 Route::post('update/{id}','SliderController@update')->name('update');
 Route::get('deleteImage/{id}','SliderController@deleteImage')->name('deleteImage');
+Route::get('changePassword','UserController@changePassword')->name('changePassword');
+Route::post('updatePassword','UserController@updatePassword')->name('updatePassword');
+Route::get('change', function () {
+    return view('changePassword');
+});

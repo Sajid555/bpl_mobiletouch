@@ -37,10 +37,6 @@
 						<span class="brand-text">Mobile Touch</span>
 					</a>
 				</div>
-				<div class="form-group mb-0 pull-right">
-					<span class="inline-block pr-10">Don't have an account?</span>
-					<a class="inline-block btn btn-info btn-rounded btn-outline" href="{{url('/adminSignup')}}">Sign Up</a>
-				</div>
 				<div class="clearfix"></div>
 			</header>
 			
@@ -54,7 +50,7 @@
 								<div class="row">
 									<div class="col-sm-12 col-xs-12">
 										<div class="mb-30">
-											<h3 class="text-center txt-dark mb-10">Mobile Touch User Login</h3>
+											<h3 class="text-center txt-dark mb-10">Mobile Touch User Password Change</h3>
 											<h6 class="text-center nonecase-font txt-grey">Enter your details below</h6>
 										</div>	
 										<div class="form-wrap">
@@ -68,29 +64,35 @@
 										<strong>Success!</strong> {{Session::get('success_message')}}
 										</div>	
 										@endif
-											<form action="{{route('processLogin')}}" method="POST">
+											<form method="post" action="{{url('/updatePassword')}}">
 												@csrf
 												<div class="form-group">
-													<label class="control-label mb-10" for="exampleInputEmail_2">Email Address</label>
-													<input type="email" name="email"class="form-control" required="" id="exampleInputEmail_2" placeholder="Enter e-mail">
+													<label class="pull-left control-label mb-10" for="exampleInputpwd_2">Password</label>
+													<a class="capitalize-font txt-primary block mb-10 pull-right font-12" href="forgot-password.html"></a>
+													<div class="clearfix"></div>
+													<input type="hidden" name="passwordold" value="">
+													<input type="text" name="password" class="form-control" required="" id="exampleInputpwd_2" placeholder="Enter password" value="">
+
 												</div>
 												<div class="form-group">
-													<label class="pull-left control-label mb-10" for="exampleInputpwd_2">Password</label>
-													<a class="capitalize-font txt-primary block mb-10 pull-right font-12" href="forgot-password.html">Forgot Password ?</a>
+													<label class="pull-left control-label mb-10" for="exampleInputpwd_2">New Password</label>
+													<a class="capitalize-font txt-primary block mb-10 pull-right font-12" href="forgot-password.html"></a>
 													<div class="clearfix"></div>
 													<input type="password" name="password" class="form-control" required="" id="exampleInputpwd_2" placeholder="Enter password">
 												</div>
-												<a class="capitalize-font txt-primary block mb-10 pull-right font-12" href="{{url('/changePassword')}}">Change Password ?</a>
-													<div class="clearfix"></div>
 												<div class="form-group">
-													<div class="checkbox checkbox-primary pr-10 pull-left">
-														<input id="checkbox_2" type="checkbox">
-														<label for="checkbox_2"> Remember Me</label>
-													</div>
+													<label class="pull-left control-label mb-10" for="exampleInputpwd_2">Confirm New Password</label>
+													<a class="capitalize-font txt-primary block mb-10 pull-right font-12" href="forgot-password.html"></a>
+													<div class="clearfix"></div>
+													<input type="password" name="confirm_password" class="form-control" required="" id="exampleInputpwd_2" placeholder="Enter password">
+												</div>
+												
+												<div class="form-group">
+													
 													<div class="clearfix"></div>
 												</div>
 												<div class="form-group text-center">
-													<button type="submit" class="btn btn-info btn-rounded">Sign in</button>
+													<button type="submit" class="btn btn-info btn-rounded"><a href="{{route('updatePassword')}}"></a> Change Password Confirm</button>
 												</div>
 											</form>
 										</div>

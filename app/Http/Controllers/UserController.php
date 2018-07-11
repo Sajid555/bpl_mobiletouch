@@ -10,6 +10,7 @@ use App\User;
 use Auth;
 use Hash;
 use Session;
+use DB;
 class UserController extends Controller
 {
      public static function processSignup() {
@@ -64,5 +65,26 @@ class UserController extends Controller
         
         return Redirect()->to('adminlogin')->with('success_message', 'You have successfully SignOut');
     }
+     public function changePassword(){
+        $data=User::get();
+        
+        
+        return view('adminPanel.changePassword',compact('data'));
+
+    }
+    public function updatePassword(){
+         $data=User::find(Auth::user()->id);
+         if(Auth::check(Input::get('passwordold'),$data['password']) && Input::get('password')==Input::get('confirm_password')){
+            $data->password=bcrypt(Input::get('password'));
+            $data->save();
+            return back()->with('success_message','Password changed');
+         }
+ else 
+    {
+        return back()->with('error_message','Password not changed');
+    }
+        
+    }
+   
        
 }

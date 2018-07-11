@@ -28,6 +28,7 @@ class ComposerStaticInite3b84b97dab8a59e713e76e49496384a
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -138,6 +139,7 @@ class ComposerStaticInite3b84b97dab8a59e713e76e49496384a
         'C' => 
         array (
             'Cron\\' => 5,
+            'Collective\\Html\\' => 16,
             'Cerbero\\QueryFilters\\' => 21,
             'Carbon\\' => 7,
         ),
@@ -366,6 +368,10 @@ class ComposerStaticInite3b84b97dab8a59e713e76e49496384a
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'Collective\\Html\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
+        ),
         'Cerbero\\QueryFilters\\' => 
         array (
             0 => __DIR__ . '/..' . '/cerbero/query-filters/src',
@@ -440,17 +446,17 @@ class ComposerStaticInite3b84b97dab8a59e713e76e49496384a
         'App\\Http\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/MainController.php',
         'App\\Http\\Controllers\\MobileController' => __DIR__ . '/../..' . '/app/Http/Controllers/MobileController.php',
         'App\\Http\\Controllers\\OrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/OrderController.php',
+        'App\\Http\\Controllers\\SliderController' => __DIR__ . '/../..' . '/app/Http/Controllers/SliderController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\home' => __DIR__ . '/../..' . '/app/Http/Controllers/home.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
-        'App\\Http\\Middleware\\CheckAuth' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckAuth.php',
+        'App\\Http\\Middleware\\CheckPermissions' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckPermissions.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\IsAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/IsAdmin.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Http\\Middleware\\checkPermissions' => __DIR__ . '/../..' . '/app/Http/Middleware/checkPermissions.php',
         'App\\Order' => __DIR__ . '/../..' . '/app/Order.php',
         'App\\Order_Address' => __DIR__ . '/../..' . '/app/Order_Address.php',
         'App\\Order_Product' => __DIR__ . '/../..' . '/app/Order_Product.php',
@@ -475,6 +481,13 @@ class ComposerStaticInite3b84b97dab8a59e713e76e49496384a
         'Cerbero\\QueryFilters\\MakeQueryFiltersCommand' => __DIR__ . '/..' . '/cerbero/query-filters/src/MakeQueryFiltersCommand.php',
         'Cerbero\\QueryFilters\\QueryFilters' => __DIR__ . '/..' . '/cerbero/query-filters/src/QueryFilters.php',
         'Cerbero\\QueryFilters\\QueryFiltersServiceProvider' => __DIR__ . '/..' . '/cerbero/query-filters/src/QueryFiltersServiceProvider.php',
+        'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
+        'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
+        'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',
+        'Collective\\Html\\FormFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/FormFacade.php',
+        'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
+        'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
+        'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
