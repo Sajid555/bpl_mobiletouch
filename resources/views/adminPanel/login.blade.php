@@ -60,8 +60,10 @@
 										<div class="form-wrap">
 										@if(Session::has('error_message'))
 										<div class="alert alert-danger">
-										<strong>Error!</strong> {{Session::get('error_message')}}
+										     <button type="button" aria-hidden="true" class="close" onclick="this.parentElement.style.display='none'">x</button>
+										     <strong>Error!</strong> <span>{{Session::get('error_message')}} </span>
 										</div>
+										
 										@endif
 										@if(Session::has('success_message'))
 										<div class="alert alert-success">
