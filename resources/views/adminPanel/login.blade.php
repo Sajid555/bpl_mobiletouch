@@ -16,8 +16,7 @@
 		
 		<!-- vector map CSS -->
 		<link href="{{asset('adminpanel/vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-		
-		
+			
 		
 		<!-- Custom CSS -->
 		<link href="{{asset('adminpanel/dist/css/style.css')}}" rel="stylesheet" type="text/css">
@@ -67,8 +66,10 @@
 										@endif
 										@if(Session::has('success_message'))
 										<div class="alert alert-success">
-										<strong>Success!</strong> {{Session::get('success_message')}}
-										</div>	
+										     <button type="button" aria-hidden="true" class="close" onclick="this.parentElement.style.display='none'">x</button>
+										     <strong>Success!</strong>  <span>{{Session::get('success_message')}} </span>
+										</div>
+										
 										@endif
 											<form action="{{route('processLogin')}}" method="POST">
 												@csrf
@@ -78,10 +79,11 @@
 												</div>
 												<div class="form-group">
 													<label class="pull-left control-label mb-10" for="exampleInputpwd_2">Password</label>
-													<a class="capitalize-font txt-primary block mb-10 pull-right font-12" href="forgot-password.html">Forgot Password ?</a>
+													
 													<div class="clearfix"></div>
 													<input type="password" name="password" class="form-control" required="" id="exampleInputpwd_2" placeholder="Enter password">
 												</div>
+												<a class="capitalize-font txt-primary block mb-10 pull-left font-12" href="forgot-password.html">Forgot Password ?</a>
 												<a class="capitalize-font txt-primary block mb-10 pull-right font-12" href="{{url('/changePassword')}}">Change Password ?</a>
 													<div class="clearfix"></div>
 												<div class="form-group">
