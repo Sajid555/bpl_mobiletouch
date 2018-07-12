@@ -88,7 +88,7 @@ class MainController extends Controller {
         $inputs = $request->except('_token');
         $Product = \App\Product::filter($inputs);
         
-         return view('Mainpage', compact('Product'));
+        return view('Mainpage', compact('Product'));
 
     }
     public function showproducts()
@@ -113,7 +113,7 @@ class MainController extends Controller {
             'cat_name' => 'required|min:3',
             'image' => 'required|   mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
+ $Category = new Category();
         $file = Input::file("image");
         if (!empty($file)) {
             $newFilename = $file->getClientOriginalName();
@@ -122,14 +122,13 @@ class MainController extends Controller {
             if ($upload)
                 $Category->image = $newFilename;
         }
-
-        $Category = new Category();
-        $Category->cat_name =  $request->visaName;
-        $Category->image = $imageName;
+       
+        $Category->cat_name =  $request->input("cat_name");
+        $Category->image =$request->input('image');
 
         $Category->save();
         return view('adminPanel.addBrand');
-    }
+    }  
 
     public function details($id) {
         $data = \App\Product::where('id', '=', $id)->first();

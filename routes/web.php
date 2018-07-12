@@ -171,7 +171,7 @@ Route::get('GetOrderAddress','MainController@GetOrderAddress');
 Route::get('GetAllUser','MainController@GetAllUser');
 
 
-Route::get('getFilters','MainController@getFilterProduct');
+Route::post('getFilters','MainController@getFilterProduct');
 
 Route::get('/orders','MainController@order');
 Route::get('ans', 'MainController@ans');

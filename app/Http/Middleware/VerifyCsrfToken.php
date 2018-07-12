@@ -12,6 +12,9 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        '/addproduct'
+        '/addproduct',
+        'http://localhost/bpl_mobiletouch/public/getFilters',
+
+
     ];
 }

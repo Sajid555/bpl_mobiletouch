@@ -15,7 +15,7 @@
 				<div class="panel-wrapper collapse in">
 					<div class="panel-body">
 						<div class="form-wrap">
-							<form action="" method="post" enctype="multipart/form-data">
+							<form action="{{url('/addbrand')}}" method="post" enctype="multipart/form-data">
 								{{ csrf_field() }}
 								<div class="form-group">
 									<input type="file" name="image" id="image" >

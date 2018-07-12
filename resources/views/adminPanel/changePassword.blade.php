@@ -92,7 +92,7 @@
 													<div class="clearfix"></div>
 												</div>
 												<div class="form-group text-center">
-													<button type="submit" class="btn btn-info btn-rounded"><a href="{{route('updatePassword')}}"></a> Change Password Confirm</button>
+													<button type="submit" class="btn btn-info btn-rounded"><a href="{{route('updatePassword')}}" onclick="setTimeout(error_message, 3000)"></a> Change Password Confirm</button>
 												</div>
 											</form>
 										</div>

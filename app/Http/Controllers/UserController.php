@@ -73,6 +73,7 @@ class UserController extends Controller
 
     }
     public function updatePassword(){
+        if(isset(Auth::user()->id)){
          $data=User::find(Auth::user()->id);
          if(Auth::check(Input::get('passwordold'),$data['password']) && Input::get('password')==Input::get('confirm_password')){
             $data->password=bcrypt(Input::get('password'));
@@ -83,8 +84,16 @@ class UserController extends Controller
     {
         return back()->with('error_message','Password not changed');
     }
+
         
     }
+     else 
+    {
+        return back()->with('error_message','First login to change password');
+    }
+    }
+   
+
    
        
 }
