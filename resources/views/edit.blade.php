@@ -1,562 +1,781 @@
+@extends('layouts.addProductApp')
+@section('content')
 
-
-   
-  @extends('master')
-
-  @section('content')
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-              <?php  
+<div class="container-fluid">
+  <!-- Title -->
+  <div class="row heading-bg">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+      <h5 class="txt-dark"><strong>Add Product:</strong></h5>
+    </div>
+  </div>
+   <?php  
              $brand=\App\Brand::all();  
                ?>
+ <?php $cat=\App\Category::all() ?>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default card-view">
+        <div class="panel-wrapper collapse in">
+          <div class="panel-body">
+            <div class="form-wrap">
+              <form action="{{route('postProduct')}}" method="POST" enctype="multipart/form-data">
+                       {{ csrf_field() }}
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Category</strong></label>
+                      <select class="form-control ProductCategory" id="ProductCategory" data-placeholder="Choose a Category" tabindex="1" name="cat_id" required>
+                        <option selected disabled>Select the Category</option>
+                         @foreach($cat as $c)
+                                                <option value="{{$c->id}}">{{$c->cat_name}}</option>
+                                                 @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Brand</strong></label>
+                      <select class="form-control brand" id="brand_id" data-placeholder="Choose a Category" tabindex="1" name="brand_id" required>
+                        <option selected disabled>Select the Brand</option>
+                               @foreach($brand as $b)
+                                                <option value="{{$b->brand_id}}">{{$b->brand_name}}</option>
+                                                   @endforeach
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                      <a href="{{url('/addbrand')}}">
+                      <button type="button" class="btn  btn-primary btn-rounded">Add new Brand</button></a>
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                      <a href="{{url('/addmodel')}}">
+                      <button type="button" class="btn  btn-primary btn-rounded">Add new Model</button></a>
+                    </div>
+                  </div>
+                  <!--/span-->
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Product Price</strong></label>
+                      <input type="hidden" name="price" id="price" value="{{$data->id}}">
+                      <input type="text" id="price" name="price" class="form-control" placeholder="Enter product price" required autofocus value="{{$data->price}}">
+                    </div>
+                  </div>
 
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Product Details</strong></label>
+                      <input type="hidden" name="details" id="details" value="{{$data->id}}">
+                      <input type="text" id="price" name="price" class="form-control" placeholder="Enter product price" required autofocus value="{{$data->details}}">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Daraz Price</strong></label>
+                      <input type="hidden" name="drazpk" id="drazpk" value="{{$data->id}}">
+                      <input type="text" id="drazpk" name="drazpk" class="form-control" placeholder="Enter Daraz price" required autofocus value="{{$data->drazpk}}">
+                    </div>
+                  </div>
 
-   <div class="container">
-      <div class="col-md-9">
-         <h2 class="page-header" style="color:cadetblue">Add Product :</h2>
-         <form class="form-horizontal" action="{{route('saveData')}}" method="POST" enctype="multipart/form-data">
-            {{ csrf_field() }}
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>FlipCart Price</strong></label>
+                      <input type="hidden" name="flipcart" id="flipcart" value="{{$data->id}}">
+                      <input type="text" id="flipcart" name="flipcart" class="form-control" placeholder="Enter FlipCart price" required autofocus value="{{$data->drazpk}}">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Ebay Price</strong></label>
+                      <input type="hidden" name="ebay" id="ebay" value="{{$data->id}}">
+                      <input type="text" id="ebay" name="ebay" class="form-control" placeholder="Enter Ebay price" required autofocus value="{{$data->drazpk}}">
+                    </div>
+                  </div>
+                </div>
+                <?php $photo=\App\photo::all() ?>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Slider Image</strong></label>
+                      <input type="hidden" name="image_id" id="image_id" value="{{$data->id}}">
+                      <select class="form-control ProductCategory" id="ProductCategory" data-placeholder="Choose a Category" tabindex="1" name="image_id" required autofocus value="{{$data->image_id}}">
+                        <option selected disabled>Select slider images</option>
+                        @foreach($photo as $p)
+                                                <option value="{{$p->id}}">{{$p->img_name}}</option>
+                                                 @endforeach   
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="FormControlFile" class="control-label mb-10"><strong>Product Image</strong></label>
+                      <input type="hidden" name="image" id="image" value="{{$data->id}}">
+                      <input type="file" id="image" name="image" class="form-control-file" required autofocusvalue="{{$data->image}}" >
+                    </div>
+                  </div>  
+                </div>
+                <div class="seprator-block"></div>
+                <h5 class="txt-dark capitalize-font">Display</h5>
+                <hr class="light-grey-hr"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Display Type</strong></label>
+                      <input type="hidden" name="display_type" id="display_type" value="{{$data->id}}">
+                      <select class="form-control" name="display_type" data-placeholder="Choose a Category" tabindex="1" required value="{{$data->display_type}}">
 
-          <?php $cat=\App\Category::all() ?>
-               
-            <div class="form-group">
-               <label class="control-label col-xs-3   " for="category">Category:</label>
-               <div class="col-xs-9">
-                  <select class="form-control ProductCategory" id="ProductCategory" name="cat_id">
-                     <option selected disabled>Select the Category</option>
-                     
-                     @foreach($cat as $c)
-                     <option value="{{$c->id}}">{{$c->cat_name}}</option>
-                   @endforeach
-                  </select>
-               </div>
-            </div>
-                   <div class="form-group" style="padding-left:700px">
-            
-                    <a href="{{url('AddCategory')}}"><button type="button" class="btn btn-info">Add new category</button></a>
-                 
-            </div>
+                                   <option  value="IPS-LCD ">IPS-LCD </option>
 
-            <div class="form-group">
-               <label class="control-label col-xs-3  " for="brand">Brands:</label>
-               <div class="col-xs-9">
-                  <select class="form-control brand" id="brand_id" name="brand_id">
-                     <option selected disabled>Select the Brand</option>
-                     @foreach($brand as $b)
-                     <option value="{{$b->brand_id}}">{{$b->brand_name}}</option>
-                   @endforeach
-                  </select>
-               </div>
-            </div>
-            <div class="form-group" style="padding-left:700px">
-            
-                    <a href="{{url('AddBrand')}}"><button type="button" class="btn btn-info">add new model</button></a>
-                 
-            </div>
-            <div class="form-group">
-               
-               <div class="col-xs-9">
-                <input type="hidden" name="id" id="id" value="{{$data->id}}">
-                 
-               </div>
-              </div>
-            <div class="form-group">
-               <label class="control-label col-xs-3" for="price">Product Price:</label>
-               <div class="col-xs-9">
-                <input type="hidden" name="price" id="price" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="price" name="price" placeholder="Enter Product Price" value="{{$data->price}}">
-               </div>
-            </div>
-            <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">Product Details:</label>
-               <div class="col-xs-9">
-                <input type="hidden" name="price" id="price" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="details" name="details" placeholder="Enter Display Type" value="{{$data->details}}">
-               </div>
-            </div>
-             <div id="DIV_62">
-          <img src= "{{asset('images') . '/'. $data->image}}"  >
-         
-        </div>
-            <div class="form-group">
-               <label class="control-label col-xs-3" for="image">Product Image:</label>
-               <div class="col-xs-9">
-                  <label for="FormControlFile"></label>
-                  
-                  <input type="file" class="form-control-file" id="image" name="image" value="{{$data->image_path }}">
-               </div>
-            </div>
-           <br>
-            
-            <div class="container" style="padding-left: 70px;">
-               
-              
-                <h3>Display</h3><hr>
-               <div class="container">
-               <div class="form-group">
-                <div class="col-xs-7">
-                       <select class="form-control" name="display_type">
-                         <option  value="TFT LCD ">TFT LCD </option>
-
-                         <option  value="IPS-LCD ">IPS-LCD </option>
-
-                         <option  value="Resistive Touchscreen LCD ">Resistive Touchscreen LCD </option>
-                         <option  value="Capacitive Touch screen LCD ">Capacitive Touch screen LCD </option>
-                         <option  value="OLED ">OLED </option>
-                         <option  value="AMOLED Retina Display ">AMOLED Retina Display </option>
-                         <option  value="Haptic ">Haptic </option>
-                         <option  value="Tactile touch screen ">Tactile touch screen</option>
-                         <option  value="Gorilla Glass ">Gorilla Glass </option>
-           
-                       </select>
-                     </div>
-                      </div>
-
-              <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="display_type">Display Type</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="display_type" id="display_type" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="display_type" name="display_type" placeholder="Enter Display Type" value="{{$data->display_type}}">
-               </div>
-            </div>
-               <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Resolution">Resolution</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Resolution" id="Resolution" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Resolution" name="Resolution" placeholder="Enter Product Resolution" value="{{$data->Resolution}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3"  for="Size">Size</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Size" id="Size" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Size" name="Size" placeholder="Enter Product Price"  value="{{$data->Size}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Pixel_Density">Pixel Density</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Pixel_Density" id="Pixel_Density" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="price" name="Pixel_Density" placeholder="Enter Product Pixel Density" value="{{$data->Pixel_Density}}">
-               </div>
-            </div>
- 
-
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="price">Touchscreen_Type:</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Touchscreen_type" id="Touchscreen_type" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="price" name="Touchscreen_type" placeholder="Enter Product Touchscreen type" value="{{$data->Touchscreen_type}}">
-               </div>
-            </div>
-            
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Screen_to_body_percentage">Screen to body percentage</label>
-               <div class="col-xs-7">
-                 <input type="hidden" name="Screen_to_body_percentage" id="Screen_to_body_percentage" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Screen_to_body_percentage" name="Screen_to_body_percentage" placeholder="Enter Product Price" value="{{$data->Screen_to_body_percentage}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="price">Color_Reproduction</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Color_Reproduction" id="Color_Reproduction" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Color_Reproduction" name="Color_Reproduction" placeholder="Enter Product Color_Reproduction" value="{{$data->Color_Reproduction}}">
-               </div>
-            </div>
-           
-                      </div>  
-                      <div class="container" style="padding-left: 70px;">
-               
-               <h3>DESIGN AND BUILD</h3><hr>
-               <div class="container">
-               <div class="form-group">
-                <div class="col-xs-8">
-                <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Dimensions">Dimensions</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Dimensions" id="Dimensions" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Dimensions" name="Dimensions" placeholder="Enter Dimensions" value="{{$data->Dimensions}}">
-
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Weight">Weight</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Weight" id="Weight" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Weight" name="Weight" placeholder="Enter Weight" value="{{$data->Weight}}" >
-                  
-               </div>
-            </div>
-            <div class="container" style="padding-left: 70px;">
-               
-               <h3>SOFTWARE</h3><hr>
-               <div class="container">
-               <div class="form-group">
-                <div class="col-xs-7">
-                     <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="OS">Oprating System</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="OS" id="OS" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="OS" name="OS" placeholder="Enter Product Oprating System" value="{{$data->OS}}">
-               </div>
-            </div>   
-                     </div>
-
-                      </div>
-             
-                     </div>
-                      </div>
-                       <div class="container" style="padding-left: 70px;">
-               
-               <h3>CAMERA</h3><hr>
-               <div class="container">
-               <div class="form-group">
-                <div class="col-xs-7">
-                     
-              <div class="row">
-                <div class="col-sm-3">
-            <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">real flash</label>
-               <div class="col-xs-9">
-
-                  <input type="radio" {{ $data->realflash === 'yes' ? 'checked' : '' }} name="realflash" value="yes"> yes<br>
-                  <input type="radio" {{ $data->realflash === 'no' ? 'checked' : '' }} name="realflash" value="no">no<br>
-               </div>
-            </div>
-          </div>
-             <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">Fingerprint sensor</label>
-               <div class="col-xs-9">
-                  <input type="radio" {{ $data->Fingerprint_sensor === 'yes' ? 'checked' : '' }} name="Fingerprint_sensor" value="yes" > yes<br>
-                  <input type="radio" {{ $data->Fingerprint_sensor === 'no' ? 'checked' : '' }} name="Fingerprint_sensor" value="no">no<br>
-               </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Primary">Primary</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Primary" id="Primary" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Primary" name="Primary" placeholder="Enter  Primary Camera" value="{{$data->Primary}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Front">Front</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Front" id="Front" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Front" name="Front" placeholder="Enter  Front Camera" value="{{$data->Front}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Video">Video</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Video" id="Video" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Video" name="Video" placeholder="Enter  Video play quality" value="{{$data->Video}}">
-               </div>
-            </div>
-</div>
-</div>
- <div class="container" style="padding-left: 70px;">
-               
-               <h3>STORAGE</h3><hr>
-               
-               <div class="container">
-               <div class="form-group">
-                <div class="col-xs-7">
-                    <div class="form-group" style="padding-right: 100px;">
-                      
-               <label class="control-label col-xs-3" for="Internal">Internal</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Internal" id="Internal" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Internal" name="Internal" placeholder="Enter  Internal STORAGE" value="{{$data->Internal}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="RAM">RAM</label>
-               <div class="col-xs-7">
-                  <input type="hidden" name="RAM" id="RAM" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="RAM" name="RAM" placeholder="Enter  RAM" value="{{$data->RAM}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Expandable">Expandable</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Expandable" id="Expandable" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Expandable" name="Expandable" placeholder="Enter Expandable Memory Upto" value="{{$data->Expandable}}">
-               </div>
-            </div>   
-
-                     </div>
-                      </div>
-<div>
-  
-
-</div>
-<div class="container" style="padding-left: 70px;">
-               
-               <h3>BATTERY</h3><hr>
-               <div class="container">
-               <div class="form-group">
-                <div class="col-xs-7">
-                    <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Type">Type</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Type" id="Type" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Type" name="Type" placeholder="Enter  BATTERY Type" value="{{$data->Type}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Capacity">Capacity</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Capacity" id="Capacity" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Capacity" name="Capacity" placeholder="Enter  Capacity" value="{{$data->Capacity}}">
-               </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">Turbo Charge </label>
-               <div class="col-xs-9">
-                  <input type="radio" {{ $data->Turbo === 'yes' ? 'checked' : '' }} name="Turbo" value="yes"> yes<br>
-                  <input type="radio"{{ $data->Turbo === 'no' ? 'checked' : '' }} name="Turbo" value="no">no<br>
-               </div>
-            </div>
-              <div>
-             
-          </div>
-           </div>
-              
-          <br>
-
-          <h3>Conectivity</h3><hr>
-          <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Bluetooth">Bluetooth</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Bluetooth" id="Bluetooth" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Bluetooth" name="Bluetooth" placeholder="Enter  Bluetooth value" value="{{$data->Bluetooth}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="SIM Configuration">SIM Configuration</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="SIM" id="SIM" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="SIM" name="SIM" placeholder="Enter  SIM Type" value="{{$data->SIM}}">
-               </div>
-            </div>
-          <div class="row">
-             <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">3G</label>
-               <div class="col-xs-9">
-                  <input type="radio" {{ $data->G3 === 'yes' ? 'checked' : '' }} name="G3" value="yes"> yes<br>
-                  <input type="radio" {{ $data->G3 === 'no' ? 'checked' : '' }} name="G3" value="no">no<br>
-               </div>
-            </div>
-          </div>
-             <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">2G</label>
-               <div class="col-xs-9">
-                  <input type="radio" {{ $data->G2 === 'yes' ? 'checked' : '' }} name="G2" value="yes"> yes<br>
-                  <input type="radio" {{ $data->G2 === 'no' ? 'checked' : '' }}  name="G2" value="no">no<br>
-               </div>
-            </div>
-          </div>
-        
-                   
-                <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">4G</label>
-               <div class="col-xs-9">
-                  <input type="radio" {{ $data->G4 === 'yes' ? 'checked' : '' }} name="G4" value="yes"> yes<br>
-                  <input type="radio" {{ $data->G4 === 'no' ? 'checked' : '' }} name="G4" value="no">no<br>
-               </div>
-            </div>
-          </div>
-
-
-                <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">GPS</label>
-               <div class="col-xs-9">
-                  <input type="radio" {{ $data->GPS === 'yes' ? 'checked' : '' }} name="GPS" value="yes"> yes<br>
-                  <input type="radio" {{ $data->GPS === 'no' ? 'checked' : '' }} name="GPS" value="no">no<br>
-               </div>
-            </div>
-          </div>
-           <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">NFC Chipset</label>
-               <div class="col-xs-9">
-                  <input type="radio" {{ $data->NFC === 'yes' ? 'checked' : '' }} name="NFC" value="yes"> yes<br>
-                  <input type="radio" {{ $data->NFC === 'no' ? 'checked' : '' }}name="NFC" value="no">no<br>
-               </div>
-            </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">USB</label>
-               <div class="col-xs-9">
-                  <input type="radio" {{ $data->USB === 'yes' ? 'checked' : '' }} name="USB" value="yes"> yes<br>
-                  <input type="radio"{{ $data->USB === 'no' ? 'checked' : '' }} name="USB" value="no">no<br>
-               </div>
-            </div>
-      
-      </div>
-        <div class="container" style="padding-left: 70px;">
-               
-               <h3>Display</h3><hr>
-               <div class="container">
-               <div class="form-group">
-                <div class="col-xs-7">
-                       <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Variant">Variant</label>
-               <div class="col-xs-7">
-                  <input type="hidden" name="Variant" id="Variant" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Variant" name="Variant" placeholder="Enter  Variant" value="{{$data->Variant}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Architecture">Architecture</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Architecture" id="Architecture" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Architecture" name="Architecture" placeholder="Enter Architecture" value="{{$data->Architecture}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Cores">No of Cores</label>
-               <div class="col-xs-7">
-                 <input type="hidden" name="Cores" id="Cores" value="{{$data->id}}">
-                  <input type="text" class="form-control" id=" Cores" name="Cores" placeholder="Enter  No of Cores" value="{{$data->Cores}}">
-               </div>
-            </div>
-              <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Frequency">Frequency</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Frequency" id="Frequency" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Frequency" name="Frequency" placeholder="Enter Frequency" value="{{$data->Frequency}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Make">Make</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Make" id="Make" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Make" name="Make" placeholder="Enter Make" value="{{$data->Make}}">
-               </div>
-            </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="GPU">GPU</label>
-               <div class="col-xs-7">
-                <input type="hidden" name="GPU" id="GPU" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="GPU" name="GPU" placeholder="Enter GPU" value="{{$data->GPU}}">
-               </div>
-            </div>  
-                     </div>
+                                   <option  value="Resistive Touchscreen LCD ">Resistive Touchscreen LCD </option>
+                                   <option  value="Capacitive Touch screen LCD ">Capacitive Touch screen LCD </option>
+                                   <option  value="OLED ">OLED </option>
+                                   <option  value="AMOLED Retina Display ">AMOLED Retina Display </option>
+                                   <option  value="Haptic ">Haptic </option>
+                                   <option  value="Tactile touch screen ">Tactile touch screen</option>
+                                   <option  value="Gorilla Glass ">Gorilla Glass </option>
+                                </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Resolution</strong></label>
+                      <input type="hidden" name="Resolution" id="Resolution" value="{{$data->id}}">
+                      <input type="text" id="Resolution" name="Resolution" class="form-control" placeholder="Enter resolution" required autofocus value="{{$data->Resolution}}">
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Size</strong></label>
+                      <input type="hidden" name="Size" id="Size" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Size" placeholder="Enter size" required autofocus value="{{$data->Size}}">
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Pixel Density</strong></label>
+                      <input type="hidden" name="Pixel_Density" id="Pixel_Density" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Pixel_Density" placeholder="Enter pixel density"required autofocus value="{{$data->Pixel_Density}}">
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Touchscreen type</strong></label>
+                      <input type="hidden" name="Touchscreen_type" id="Touchscreen_type" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Touchscreen_type" placeholder="Enter screen type" required autofocus value="{{$data->Touchscreen_type}}">
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Color Reproduction</strong></label>
+                      <input type="hidden" name="Color_Reproduction" id="Color_Reproduction" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Color_Reproduction"  placeholder="Enter pixel color reproduction" required autofocus value="{{$data->Color_Reproduction}}">
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Protection</strong></label>
+                      <input type="hidden" name="Protection" id="Protection" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Protection" id="Protection" placeholder="Enter protection" required autofocus value="{{$data->Protection}}">
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Screen to Body %</strong></label>
+                      <input type="hidden" name="Screen_to_body_percentage" id="Screen_to_body_percentage" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Screen_to_body_percentage" placeholder="Enter pixel density" required autofocus value="{{$data->Screen_to_body_percentage}}">
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="seprator-block"></div>
+                <h5 class="txt-dark capitalize-font">Design & Build</h5>
+                <hr class="light-grey-hr"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10" for="Dimensions"><strong>Dimensions</strong></label>
+                      <input type="hidden" name="Dimensions" id="Dimensions" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Dimensions" id="Dimensions" placeholder="Enter dimension" required autofocus value="{{$data->Dimensions}}">
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Weight</strong></label>
+                      <input type="hidden" name="Weight" id="Weight" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Weight" placeholder="Enter weight" required autofocus value="{{$data->Weight}}">
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="seprator-block"></div>
+                <h5 class="txt-dark capitalize-font">Software</h5>
+                <hr class="light-grey-hr"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Operating System</strong></label>
+                      <input type="hidden" name="OS" id="OS" value="{{$data->id}}">
+                      <input type="text" id="OS" class="form-control"  name="OS" placeholder="Enter OS" required autofocus value="{{$data->OS}}">
+                    </div>
+                  </div>
+                </div>
+                <div class="seprator-block"></div>
+                <h5 class="txt-dark capitalize-font">Camera</h5>
+                <hr class="light-grey-hr"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Rear Flash</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="realflash"  {{ $data->realflash === 'yes' ? 'checked' : '' }} id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="realflash" {{ $data->realflash === 'no' ? 'checked' : '' }} id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-</div></div></div></div>
-            <h3>Sound</h3><hr>
-           <div class="row" style="padding-right: 500px" >
-                <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-4" for="msg">Infrared</label>
-               <div class="col-xs-8">
-                  <input type="radio"{{ $data->Infrared === 'yes' ? 'checked' : '' }} name="Infrared" value="yes"> yes<br>
-                  <input type="radio" {{ $data->Infrared === 'no' ? 'checked' : '' }}  name="Infrared" value="no">no<br>
-               </div>
-            </div>
-
-              </div>
-          
-             
-                <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-md-4" for="msg">Loudpeaker</label>
-               <div class="col-md-8">
-                  <input type="radio" {{ $data->Loudpeaker === 'yes' ? 'checked' : '' }} name="Loudpeaker" value="yes"> yes<br>
-                  <input type="radio"  {{ $data->Loudpeaker === 'no' ? 'checked' : '' }} name="Loudpeaker" value="no">no<br>
-               </div>
-            </div>
-          </div>
-
-                <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-4" for="msg">HeadPHones</label>
-               <div class="col-xs-8">
-                  <input type="radio" {{ $data->HeadPHones === 'yes' ? 'checked' : '' }} name="HeadPHones" value="yes"> yes<br>
-                  <input type="radio" {{ $data->HeadPHones === 'no' ? 'checked' : '' }} name="HeadPHones" value="no">no<br>
-               </div>
-            </div>
-          </div>
-          </div>
-        <br>
-
-        
-         <br>
-            <h3>Sensors</h3><hr>
-            <div class="row" style="padding-right: 500px">
-                <div class="col-sm-3">
-            <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">Ambient Light</label>
-               <div class="col-xs-9">
-                  <input type="radio" {{ $data->Ambient_Light === 'yes' ? 'checked' : '' }} name="Ambient_Light" value="yes"> yes<br>
-                  <input type="radio" {{ $data->Ambient_Light === 'no' ? 'checked' : '' }} name="Ambient_Light" value="no">no<br>
-               </div>
-            </div>
-          </div>
-
-             <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">Gyroscope</label>
-               <div class="col-xs-9">
-                  <input type="radio"{{ $data->Gyroscope === 'yes' ? 'checked' : '' }} name="Gyroscope" value="yes"> yes<br>
-                  <input type="radio" {{ $data->Gyroscope === 'no' ? 'checked' : '' }} name="Gyroscope" value="no">no<br>
-               </div>
-            </div>
-          </div>
-             <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">Accelerometer</label>
-               <div class="col-xs-9">
-                  <input type="radio" {{ $data->Accelerometer === 'yes' ? 'checked' : '' }} name="Accelerometer" value="yes"> yes<br>
-                  <input type="radio" {{ $data->Accelerometer === 'no' ? 'checked' : '' }}  name="Accelerometer" value="no">no<br>
-               </div>
-            </div>
-          </div> 
- 
-
-             <div class="col-sm-3">
-             <div class="form-group">
-               <label class="control-label col-xs-3" for="msg">Proximity</label>
-               <div class="col-xs-9">
-                  <input type="radio" {{ $data->Proximity === 'yes' ? 'checked' : '' }}  name="Proximity" value="yes"> yes<br>
-                  <input type="radio" {{ $data->Proximity === 'no' ? 'checked' : '' }}name="Proximity" value="no">no<br>
-               </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Selfie Flash</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="radio" id="radio1" value="YES"   >
+                            <label for="radio1" >Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="radio" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Primary</strong></label>
+                      <input type="hidden" name="Primary" id="Primary" value="{{$data->id}}">
+                      <input type="text" name="Primary" class="form-control" placeholder="Enter primary Camera" required autofocus value="{{$data->Primary}}">
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Front</strong></label>
+                      <input type="hidden" name="Front" id="Front" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Front" placeholder="Enter front Camera" required autofocus value="{{$data->Front}}">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Video</strong></label>
+                      <input type="hidden" name="Video" id="Video" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Video" placeholder="Enter video @fps" required autofocus value="{{$data->Video}}">
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="seprator-block"></div>
+                <h5 class="txt-dark capitalize-font">Storage</h5>
+                <hr class="light-grey-hr"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Internal</strong></label>
+                      <input type="hidden" name="Internal" id="Internal" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Internal" placeholder="Enter internal memory" required autofocus value="{{$data->Internal}}">
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>RAM</strong></label>
+                      <input type="hidden" name="RAM" id="RAM" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="RAM" placeholder="Enter RAM" required autofocus value="{{$data->RAM}}">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Expandable</strong></label>
+                      <input type="hidden" name="Expandable" id="Expandable" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Expandable" placeholder="Enter expandable memory" required autofocus value="{{$data->Expandable}}">
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="seprator-block"></div>
+                <h5 class="txt-dark capitalize-font">Battery</h5>
+                <hr class="light-grey-hr"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Type</strong></label>
+                      <input type="hidden" name="Type" id="Type" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Type" placeholder="Enter battery type" required autofocus value="{{$data->Type}}">
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Capacity</strong></label>
+                      <input type="hidden" name="Capacity" id="Capacity" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Capacity" placeholder="Enter battery capacity" required autofocus value="{{$data->Capacity}}">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Fast Charge</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Turbo" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Turbo" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="seprator-block"></div>
+                <h5 class="txt-dark capitalize-font">Connectivity</h5>
+                <hr class="light-grey-hr"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Bluetooth</strong></label>
+                      <input type="hidden" name="Bluetooth" id="Bluetooth" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Bluetooth" placeholder="Enter bluetooth" required autofocus value="{{$data->Bluetooth}}">
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Wi-Fi</strong></label>
+                      <input type="hidden" name="Capacity" id="Capacity" value="{{$data->id}}">
+                      <input type="text" class="form-control" placeholder="Enter Wi-Fi" required autofocus value="{{$data->id}}">
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>2G</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="G2" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="G2" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>3G</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="G3" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="G3" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>4G</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="G4" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="G4" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>USB</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="USB" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="USB" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>GPS</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio"  name="GPS" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio"  name="GPS" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>NFC Chipset</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="NFC" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="NFC" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>SIM Configuration</strong></label>
+                      <input type="hidden" name="SIM" id="SIM" value="{{$data->id}}">
+                      <input type="text" name="SIM" class="form-control" placeholder="Enter SIM configuration" value="{{$data->SIM}}">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Infrared</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Infrared" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Infrared" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="seprator-block"></div>
+                <h5 class="txt-dark capitalize-font">Processor</h5>
+                <hr class="light-grey-hr"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Variant</strong></label>
+                      <input type="hidden" name="Variant" id="Variant" value="{{$data->id}}">
+                      <input type="text" id="Variant" name="Variant" class="form-control" placeholder="Enter variant" required autofocus value="{{$data->Variant}}">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Architecture</strong></label>
+                      <input type="hidden" name="Architecture" id="Architecture" value="{{$data->id}}">
+                      <input type="text" id="Architecture" name="Architecture" class="form-control" placeholder="Enter Architecture" required autofocus value="{{$data->Architecture}}">
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>No. of Cores of Processor</strong></label>
+                      <input type="hidden" name="Cores" id="Cores" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Cores" placeholder="Enter no of cores" required autofocus value="{{$data->Cores}}">
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Make</strong></label>
+                      <input type="hidden" name="Make" id="Make" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="Make" placeholder="Enter make" required autofocus value="{{$data->Make}}">
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Frequency</strong></label>
+                      <input type="hidden" name="SIM" id="SIM" value="{{$data->id}}">
+                      <input type="text" class="form-control"  name="Frequency" placeholder="Enter frequency" required autofocus value="{{$data->Frequency}}">
+                    </div>
+                  </div>
+                  <!--/span-->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>GPU</strong></label>
+                      <input type="hidden" name="GPU" id="GPU" value="{{$data->id}}">
+                      <input type="text" class="form-control" name="GPU" placeholder="Enter GPU" required autofocus value="{{$data->GPU}}">
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="seprator-block"></div>
+                <h5 class="txt-dark capitalize-font">Sensors</h5>
+                <hr class="light-grey-hr"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Proximity</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Proximity" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Proximity" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Accelerometer</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Accelerometer" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Accelerometer" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Gyroscope</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Gyroscope" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Gyroscope" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Ambient Light</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Ambient_Light" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Ambient_Light" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Fingerprint sensor</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Fingerprint_sensor" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Fingerprint_sensor" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="seprator-block"></div>
+                <h5 class="txt-dark capitalize-font">Sound</h5>
+                <hr class="light-grey-hr"/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Loudspeaker</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Loudpeaker" id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="Loudpeaker" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label mb-10"><strong>Headphones</strong></label>
+                      <div class="radio-list">
+                        <div class="radio-inline pl-0">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="HeadPHones"  id="radio1" value="YES"   >
+                            <label for="radio1">Yes</label>
+                          </div>
+                        </div>
+                        <div class="radio-inline">
+                          <div class="radio radio-dark">
+                            <input type="radio" name="HeadPHones" id="radio2" value="No"   >
+                            <label for="radio2">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/row-->
+                <div class="form-actions">
+                  <button class="btn btn-success btn-icon left-icon mr-10 pull-left"> <i class="fa fa-check"></i> <span>Save</span></button>
+                  <button type="button" class="btn btn-warning pull-left">Cancel</button>
+                  <div class="clearfix"></div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-            <div class="form-group">
-               <label class="control-label col-xs-3" for="submit"></label>
-               <div class="col-xs-9">
-                  <button type="submit" class="btn btn-primary center-block" value="submit">Submit</button>
-               </div>
-            </div>
-         </form>
-      </div>
-   </div>
-  
+    </div>
+  </div>
+  <!-- /Row -->
+</div>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  <!-- <script  src="../../Jquery/prettify.js"></script> -->
  <!-- <script type="text/javascript"> -->
    <script>
@@ -572,11 +791,11 @@
 
                     type:'get',
 
-                    url: '/myshop/public/getSubCategory/',
-                    data:{'id':d},
+                    url: 'http://localhost/BPL-mobileshop/public/GetSubCategoryMobNames/'+d,
+                    //data:{'id':d},
 
                     success:function(data){
-                         
+                         console.log(data);
                          $('.brand').find('option').remove();
 
                         var i = 0;
@@ -607,11 +826,5 @@
        });    
 
 </script>
-      
 
-
- </body>
- </html> 
-
-
- @endsection
+@endsection
