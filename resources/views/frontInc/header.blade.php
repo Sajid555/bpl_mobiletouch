@@ -1,70 +1,64 @@
-<div class="top">
-   <div class="top2_wrapper">
-      <div class="container">
-         <div class="top2 clearfix">
-            <div class="col-sm-3">
-               <header>
-                  <div class="log">
-                     <a href="{{url('/')}}" class="logo">
-                     <img src="{{asset('flextop/images/headerlogo.png')}}" alt="" class="imge-responsive" title="Logo">
-                     </a>
-                  </div>
-               </header>
+<div class="hdr hdr--scrl">
+        <div class="main-hdr-wrpr">
+            <div class="main-hdr">
+                <a class="hdr-logo" href="#">
+                    <img class="hdr-logo__img" src="{{asset('flextop/images/Header.png')}}" alt="MySmartPrice" />
+                </a>
+                <div class="srch-wdgt ui-front">
+                    <form class="js-srch-wdgt__frm" method="POST" action="">
+                        <input required="" name="s" placeholder="Search millions of products" class="srch-wdgt__fld js-atcmplt js-hdr-srch js-srch-lght" type="search">
+                        <button type="submit" class="srch-wdgt__sbmt js-lazy-bg" value=""></button>
+                    </form>
+                </div>
+                <div class="hdr__rght">
+                    <a class="hdr__prmtn" href="#">
+                        <div class="hdr__prmtn-ttl">Oppo F7</div>
+                        <div class="hdr__prmtn-tag">on sale</div>
+                    </a>
+                    <div class="hdr__acnt js-open-acnt">
+                        <img class="hdr__acnt-img" src="https://assets.mspcdn.net/fl_lossy/msp-ui/icons/account-user@2x.png">
+                        <div class="hdr__acnt-lbl">Your Account</div>
+                        <div class="hdr__acnt-eml">Login / Sign up</div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6">
-               <div class="search_section_wrapper">
-                  <div class="search-form-wrapper clearfix">
-                     <form class="clearfix">
-                        <input type="text" class="form-control" placeholder="" value="Search Here" onBlur="if(this.value=='') this.value='Search Here'" onFocus="if(this.value =='Search Here' ) this.value=''">
-                        <a href="#" target="_blank" class="">Search</a>
-                     </form>
-                  </div>
-               </div>
-            </div>
-            <div class="col-sm-3">
-               
-              @if (isset(Auth::user()->id))
-               <div class="hello1"><a href="{{url('SignOut')}}" >Sign Out</a>
-                   @if(Auth::check())  
-                        {{Auth::user()->name}}
-                        @endif
-               </div>
-               @else
-               <div class="hello1">Hello Customer - <a href="{{url('/adminlogin')}}">Login</a> or <a href="{{url('/adminSignup')}}">Register</a>
-               </div>
-               @endif
-            </div>
-            
-         </div>
-      </div>
-   </div>
-   <div class="top3_wrapper">
-      <div class="container">
-         <div class="top3 clearfix">
-            <div class="navbar navbar_ navbar-default">
-               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               </button>
-               <div class="navbar-collapse navbar-collapse_ collapse">
-                  <ul class="nav navbar-nav sf-menu clearfix">                   
-                     <li class="sub-menu sub-menu-1"><a href="{{url('/')}}">Mobiles</a></li>
-                     <li class="sub-menu sub-menu-1"><a href="#">Samsunng</a></li>                     
-                     <li class="sub-menu sub-menu-1"><a href="#">I Phone</a></li>
-                     <li class="sub-menu sub-menu-1"><a href="#">Huawei</a></li>
-                     <li class="sub-menu sub-menu-1"><a href="#">Nokia</a></li>
-                     <li class="sub-menu sub-menu-1"><a href="#">Oppo</a></li>
-                     <li class="sub-menu sub-menu-1"><a href="#">Vivo</a></li>
-                     <li class="sub-menu sub-menu-1"><a href="#">HTC</a></li>
-                     <li>
-                     <a href="{{url('/cart')}}">View Cart</a>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
+        </div>
+        <div class="sub-hdr">
+            <ul class="nvgtn-bar">
+                <li class="nvgtn-bar__item menu-ctgry js-ctgry-btn">
+                    <span class="menu-ctgry__hmbrgr-icon js-lazy-bg"></span>All
+                    <span class="menu-ctgry__down-icon js-lazy-bg"></span>
+                </li>
+                <li class="nvgtn-bar__item nvgtn-bar__item--actv">
+                    <a class="nvgtn-bar__item-link" href="{{url('/')}}">Mobiles</a>
+                </li>
+                <li class="nvgtn-bar__item">
+                    <a class="nvgtn-bar__item-link" href="{{url('/')}}">Computers</a>
+                </li>
+                <li class="nvgtn-bar__item">
+                    <a class="nvgtn-bar__item-link" href="{{url('/')}}">TV</a>
+                </li>
+                <li class="nvgtn-bar__item">
+                    <a class="nvgtn-bar__item-link " href="{{url('/')}}">Appliances</a>
+                </li>
+                <li class="nvgtn-bar__item">
+                    <a class="nvgtn-bar__item-link " href="{{url('/')}}">Care</a>
+                </li>
+                <li class="nvgtn-bar__item">
+                    <a class="nvgtn-bar__item-link " href="{{url('/')}}">Best Products</a>
+                </li>
+                <li class="nvgtn-bar__item">
+                    <a class="nvgtn-bar__item-link " href="{{url('/')}}">Upcoming Mobiles</a>
+                </li>
+                <li class="nvgtn-bar__item">
+                    <a class="nvgtn-bar__item-link " href="{{url('/')}}">News</a>
+                </li>
+                <li class="nvgtn-bar__item">
+                    <a class="nvgtn-bar__item-link" href="{{url('/')}}">Deals</a>
+                </li>
+                <li class="nvgtn-bar__item hghlghtr js-hghlghtr-link">
+                    <a class="nvgtn-bar__item-link hghlghtr-link hghlghtr-link--lght" href="{{url('/')}}">Cashback</a>
+                </li>
+            </ul>
+        </div>
+    </div>

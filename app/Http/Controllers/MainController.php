@@ -86,9 +86,9 @@ class MainController extends Controller {
 
     public function filter(Request $request) {
         $inputs = $request->except('_token');
-        $Product = \App\Product::filter($inputs);
+        $prodct  = \App\Product::filter($inputs);
         
-        return view('Mainpage', compact('Product'));
+        return view('Mainpage', compact('prodct'));
 
     }
     public function showproducts()
@@ -248,6 +248,12 @@ class MainController extends Controller {
 
         return view('adminPanel.order', compact('Order_Address'));
     }
-    
+    public function displayAllBrands()
+    {
+
+        $category=category::all();
+        return view ('HomePage',compact('category'));
+    }
+
 
 }

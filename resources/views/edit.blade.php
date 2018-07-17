@@ -254,13 +254,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="realflash"  {{ $data->realflash === 'yes' ? 'checked' : '' }} id="radio1" value="YES"   >
+                            <input type="radio" name="realflash"  {{ $data->realflash === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="realflash" {{ $data->realflash === 'no' ? 'checked' : '' }} id="radio2" value="No"   >
+                            <input type="radio" name="realflash" {{ $data->realflash === 'NO' ? 'checked' : '' }} id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -273,13 +273,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="radio" id="radio1" value="YES"   >
+                            <input type="radio" name="radio" {{ $data->realflash === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1" >Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="radio" id="radio2" value="No"   >
+                            <input type="radio" name="radio" {{ $data->realflash === 'NO' ? 'checked' : '' }}id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -365,13 +365,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Turbo" id="radio1" value="YES"   >
+                            <input type="radio" name="Turbo"  {{ $data->Turbo === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Turbo" id="radio2" value="No"   >
+                            <input type="radio" name="Turbo"  {{ $data->Turbo === 'NO' ? 'checked' : '' }} id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -408,13 +408,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="G2" id="radio1" value="YES"   >
+                            <input type="radio" name="G2"  {{ $data->G2 === 'YES' ? 'checked' : '' }}  id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="G2" id="radio2" value="No"   >
+                            <input type="radio" name="G2"   {{ $data->G2 === 'NO' ? 'checked' : '' }} id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -427,13 +427,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="G3" id="radio1" value="YES"   >
+                            <input type="radio" name="G3"  {{ $data->G3 === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="G3" id="radio2" value="No"   >
+                            <input type="radio" name="G3"  {{ $data->G3 === 'No' ? 'checked' : '' }}  id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -449,13 +449,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="G4" id="radio1" value="YES"   >
+                            <input type="radio" name="G4"  {{ $data->G4 === 'YES' ? 'checked' : '' }}  id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="G4" id="radio2" value="No"   >
+                            <input type="radio" name="G4"  {{ $data->G4 === 'No' ? 'checked' : '' }}  id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -468,13 +468,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="USB" id="radio1" value="YES"   >
+                            <input type="radio" name="USB"  {{ $data->USB === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="USB" id="radio2" value="No"   >
+                            <input type="radio" name="USB"  {{ $data->USB === 'No' ? 'checked' : '' }}  id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -490,13 +490,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio"  name="GPS" id="radio1" value="YES"   >
+                            <input type="radio"  name="GPS"  {{ $data->GPS === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio"  name="GPS" id="radio2" value="No"   >
+                            <input type="radio"  name="GPS"  {{ $data->GPS === 'No' ? 'checked' : '' }} id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -509,13 +509,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="NFC" id="radio1" value="YES"   >
+                            <input type="radio" name="NFC"  {{ $data->NFC === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="NFC" id="radio2" value="No"   >
+                            <input type="radio" name="NFC"  {{ $data->NFC === 'No' ? 'checked' : '' }} id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -538,13 +538,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Infrared" id="radio1" value="YES"   >
+                            <input type="radio" name="Infrared"  {{ $data->Infrared === 'YES' ? 'checked' : '' }}  id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Infrared" id="radio2" value="No"   >
+                            <input type="radio" name="Infrared"  {{ $data->Infrared === 'No' ? 'checked' : '' }}  id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -619,13 +619,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Proximity" id="radio1" value="YES"   >
+                            <input type="radio" name="Proximity"  {{ $data->Proximity === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Proximity" id="radio2" value="No"   >
+                            <input type="radio" name="Proximity"  {{ $data->Proximity === 'No' ? 'checked' : '' }} id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -638,13 +638,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Accelerometer" id="radio1" value="YES"   >
+                            <input type="radio" name="Accelerometer"  {{ $data->Accelerometer === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Accelerometer" id="radio2" value="No"   >
+                            <input type="radio" name="Accelerometer"  {{ $data->Accelerometer === 'No' ? 'checked' : '' }} id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -660,13 +660,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Gyroscope" id="radio1" value="YES"   >
+                            <input type="radio" name="Gyroscope"  {{ $data->Gyroscope === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Gyroscope" id="radio2" value="No"   >
+                            <input type="radio" name="Gyroscope"  {{ $data->Gyroscope === 'No' ? 'checked' : '' }} id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -679,13 +679,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Ambient_Light" id="radio1" value="YES"   >
+                            <input type="radio" name="Ambient_Light"  {{ $data->Ambient_Light === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Ambient_Light" id="radio2" value="No"   >
+                            <input type="radio" name="Ambient_Light"  {{ $data->Ambient_Light === 'No' ? 'checked' : '' }}  id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -701,13 +701,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Fingerprint_sensor" id="radio1" value="YES"   >
+                            <input type="radio" name="Fingerprint_sensor"  {{ $data->Fingerprint_sensor === 'YES' ? 'checked' : '' }} id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Fingerprint_sensor" id="radio2" value="No"   >
+                            <input type="radio" name="Fingerprint_sensor"  {{ $data->Fingerprint_sensor === 'No' ? 'checked' : '' }} id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -726,13 +726,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Loudpeaker" id="radio1" value="YES"   >
+                            <input type="radio" name="Loudpeaker"  {{ $data->Loudpeaker === 'YES' ? 'checked' : '' }}  id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="Loudpeaker" id="radio2" value="No"   >
+                            <input type="radio" name="Loudpeaker"  {{ $data->Loudpeaker === 'No' ? 'checked' : '' }}  id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>
@@ -745,13 +745,13 @@
                       <div class="radio-list">
                         <div class="radio-inline pl-0">
                           <div class="radio radio-dark">
-                            <input type="radio" name="HeadPHones"  id="radio1" value="YES"   >
+                            <input type="radio" name="HeadPHones"  {{ $data->HeadPHones === 'YES' ? 'checked' : '' }}  id="radio1" value="YES"   >
                             <label for="radio1">Yes</label>
                           </div>
                         </div>
                         <div class="radio-inline">
                           <div class="radio radio-dark">
-                            <input type="radio" name="HeadPHones" id="radio2" value="No"   >
+                            <input type="radio" name="HeadPHones"  {{ $data->HeadPHones === 'No' ? 'checked' : '' }}  id="radio2" value="No"   >
                             <label for="radio2">No</label>
                           </div>
                         </div>

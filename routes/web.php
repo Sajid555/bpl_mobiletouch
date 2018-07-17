@@ -11,7 +11,7 @@
   |
  */
 
-Route::get("/","MainController@showproducts");
+
 
 
 Route::get('/s', function () {
@@ -43,7 +43,7 @@ Route::get('/Main', function () {
 Route::get('/check', function () {
     return view('check');
 });
-Route::get('/', 'MainController@frontpage')->name('show');
+// Route::get('/', 'MainController@frontpage')->name('show');
 
 
 Route::get('/search', 'MainController@search');
@@ -193,3 +193,7 @@ Route::post('updatePassword','UserController@updatePassword')->name('updatePassw
 Route::get('change', function () {
     return view('changePassword');
 });
+Route::get("/","MainController@displayAllBrands");
+
+
+Route::get('/dailyhome/{id}', 'MainController@show');
